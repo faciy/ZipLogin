@@ -1,6 +1,7 @@
 import React from 'react'
-import {View, Text, StyleSheet} from 'react-native'
-import Login from './components/Login'
+import {StyleSheet} from 'react-native'
+import Login from './screens/Login'
+
 
 const App = () => {
   return (
@@ -12,7 +13,8 @@ export  default App;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1, 
+   
   },
   
 });
