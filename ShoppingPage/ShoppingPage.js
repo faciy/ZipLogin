@@ -2,51 +2,41 @@ import React from 'react'
 import { 
     View, 
     StyleSheet,
-    ScrollView
+    Text
 } from 'react-native';
-import Header from './Header'
-import Username from './Username'
-import Password from './Password'
-import ButtonConnect from './ButtonConnect'
-import MotDePasse from './MotDePasse'
+import Search from './Search'
 
 
-const Login = () => {
 
-    
-    
+const ShoppingPage = () => {
+
     return (
-       <ScrollView style={styles.scrollView}>
+        
             <View style={styles.container}>
                 <View style={styles.header}>
-                    <Header />
+                    <Text style={styles.text}>Courses</Text>
                 </View>
                 <View style={styles.footer}>
-                    <Username />
-                    <Password />
-                    <ButtonConnect />
-                    <MotDePasse />
+                    <Search />
                 </View>
             </View>
-        </ScrollView>
+        
     );
 };
 
 
-export default Login;
+export default ShoppingPage;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1, 
     backgroundColor: '#090994'
   },
-  scrollView:{
-    backgroundColor:'white',
-  },
   header: {
       flex: 1,
       justifyContent: 'space-around',
       alignItems: 'center',
+      marginVertical:-200
   },
   footer: {
       flex: 1,
@@ -54,7 +44,13 @@ const styles = StyleSheet.create({
       borderTopLeftRadius: 30,
       borderTopRightRadius: 30,
       paddingVertical: 50,
-      paddingHorizontal: 30
+      paddingHorizontal:5,
+
   },
+  text:{
+      color:'white',
+      fontSize:20,
+      fontWeight:'bold',
+  }
 
 });

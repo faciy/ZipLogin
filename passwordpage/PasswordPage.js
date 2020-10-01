@@ -2,30 +2,23 @@ import React from 'react'
 import { 
     View, 
     StyleSheet,
-    ScrollView
+    ScrollView,
 } from 'react-native';
 import Header from './Header'
-import Username from './Username'
-import Password from './Password'
-import ButtonConnect from './ButtonConnect'
-import MotDePasse from './MotDePasse'
+import Adresse from './Adresse'
+import Delete from './Delete'
 
-
-const Login = () => {
-
-    
+const PasswordPage = () => {
     
     return (
-       <ScrollView style={styles.scrollView}>
+        <ScrollView style={styles.scrollView}>
             <View style={styles.container}>
                 <View style={styles.header}>
-                    <Header />
+                   <Header />
                 </View>
                 <View style={styles.footer}>
-                    <Username />
-                    <Password />
-                    <ButtonConnect />
-                    <MotDePasse />
+                    <Adresse />
+                    <Delete />
                 </View>
             </View>
         </ScrollView>
@@ -33,7 +26,7 @@ const Login = () => {
 };
 
 
-export default Login;
+export default PasswordPage;
 
 const styles = StyleSheet.create({
   container: {

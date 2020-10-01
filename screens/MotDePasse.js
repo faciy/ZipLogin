@@ -5,15 +5,20 @@ import {
     Text,
     TouchableOpacity
 } from 'react-native';
-import Contacter from '../screens/Contacter';
 
+import Contacter from '../screens/Contacter';
+import { useNavigation } from '@react-navigation/native';
 
 const MotDePasse = () => {
-    
-    return(
+
+    const navigation = useNavigation();
+
+    const PassPage = ()=> { navigation.navigate("PasswordPage")}
+
+    return (
         <View style={styles.forget}>
-            <TouchableOpacity >
-                <Text style={styles.mdp}>Mot de passe oublié</Text >
+            <TouchableOpacity onPress={(PassPage)}>
+                <Text style={styles.mdp}>Mot de passe oublié</Text>
             </TouchableOpacity>
             <Contacter />
         </View>

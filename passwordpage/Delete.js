@@ -5,37 +5,44 @@ import {
     Text,
     TouchableOpacity
 } from 'react-native';
+import Validate from './Validate';
 import { useNavigation } from '@react-navigation/native';
 
-const ButtonConnect = () => {
-
+const Delete = () => {
+  
   const navigation = useNavigation();
 
-    const btnconnect = ()=> { navigation.navigate("ShoppingPage")}
-    
+  const btnDelete = ()=> { navigation.goBack()}
+
     return(
-        <View>
-            <TouchableOpacity style={styles.button} onPress={(btnconnect)}>
-            <Text style={styles.btnLogin}>Se connecter  </Text>
+        <View style={styles.delete}>
+            <TouchableOpacity style={styles.button} onPress={(btnDelete)}>
+            <Text style={styles.btnDelete}>ANNULER</Text>
             </TouchableOpacity>
+            <Validate />
         </View>  
     );
 };
 
-export default ButtonConnect;
+export default Delete;
 
  const styles = StyleSheet.create({ 
    button: {
-    marginTop:10,
-    alignItems: "center",
+    marginTop:60,
     padding: 17,
-    justifyContent:'space-between',
     borderRadius:5,
     backgroundColor:'#0092FF',
+    paddingRight:40,
   },
-  btnLogin: {
+  btnDelete: {
     color:'white', 
     fontSize:15, 
     fontWeight:'bold',
+    left:10
   },
+  delete:{
+    flexDirection:'row',
+    justifyContent:'space-between',
+    
+  }
   });
