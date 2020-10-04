@@ -6,8 +6,6 @@ import {
 } from 'react-native';
 import Search from './Search'
 
-
-
 const ShoppingPage = () => {
 
     return (
@@ -17,7 +15,7 @@ const ShoppingPage = () => {
                     <Text style={styles.text}>Courses</Text>
                 </View>
                 <View style={styles.footer}>
-                    <Search />
+                    <Search /> 
                 </View>
             </View>
         
