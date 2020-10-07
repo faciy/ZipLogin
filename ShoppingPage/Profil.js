@@ -3,10 +3,17 @@ import {StyleSheet, View, Text} from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Avatar } from 'react-native-paper';
 import logo from '../assets/images/logo.png'
-import { IconButton, Caption, Badge } from 'react-native-paper';
+import { IconButton, Caption, Badge, FAB, Portal, Provider } from 'react-native-paper';
 
-const Profil = () => (
-    <View style={styles.container}>
+const Profil = () => {
+  const [state, setState] = React.useState({ open: false });
+
+  const onStateChange = ({ open }) => setState({ open });
+
+  const { open } = state;
+
+    return(
+        <View style={styles.container}>
         <View style={styles.avatar}>
             <Avatar.Image size={150} source={logo} style={styles.image}/>
             <IconButton
@@ -15,7 +22,7 @@ const Profil = () => (
                     style={styles.camera} 
                     size={30}
                     onPress={()=> console.log('camera')}
-                />
+            />
         </View>
         <View style={styles.name}>
             <Text style={styles.textName}>KONE PANH</Text>
@@ -53,13 +60,34 @@ const Profil = () => (
             </View>
             <View style={styles.positionOne}>
                 <Badge size={13} style={styles.badge} />
-                <Text style={styles.textSize}> <Text style={styles.grastext}>Type Engin</Text>  : Moto </Text>  
-            </View>      
+                <Text style={styles.textSize}> <Text style={styles.grastext}>Type Engin</Text>  : Moto </Text> 
+            </View>
         </View>
-        
+        <Provider>
+      <Portal>
+        <FAB.Group
+          open={open}
+          icon={ open ? 'close' : 'plus' }
+          actions={[
+            {
+              icon: 'lock',
+              label: 'Modifier mot de passe',
+              onPress: () => console.log('Pressed star'),
+            },
+          ]}
+          onStateChange={onStateChange}
+          onPress={() => {
+            if (open) {
+              // do something if the speed dial is open
+            }
+          }}
+        />
+      </Portal>
+    </Provider>
     </View>
-  
-);
+    )
+}
+
 export default Profil;
 
 const styles = StyleSheet.create({
@@ -99,7 +127,7 @@ const styles = StyleSheet.create({
         textAlign:'center'
     },
     captionInfo:{
-        fontSize: 14,
+        fontSize: 12,
         lineHeight: 14,
         top:10,
         marginLeft:50

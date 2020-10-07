@@ -1,12 +1,12 @@
 import React from 'react'
 import {View, Text} from 'react-native'
 
-const Cours = () =>{
+const Week = () =>{
     return(
         <View>
-            <Text>Cours</Text>
+            <Text>Attente</Text>
         </View>
     )
 }
 
-export default Cours;
+export default Week;

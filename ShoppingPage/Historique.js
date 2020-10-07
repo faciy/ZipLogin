@@ -1,12 +1,18 @@
 import React from 'react'
-import {View, Text} from 'react-native'
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
-const Historique = () =>{
-    return(
-        <View>
-            <Text>Historique</Text>
-        </View>
-    )
+import Today from './Today'
+import Week from './Week'
+
+const Tab = createMaterialTopTabNavigator();
+
+const Historique = () => {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name="Home" component={Today} />
+      <Tab.Screen name="Settings" component={Week} />
+    </Tab.Navigator>
+  );
 }
 
 export default Historique;

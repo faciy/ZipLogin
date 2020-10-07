@@ -31,22 +31,6 @@ const styles = StyleSheet.create({
     marginVertical:10
     
    },
-//    text:{
-//     color:'black',
-//     right:100
-//    },
-//    cardContent:{
-//     flexDirection:'row',
-//     justifyContent:'space-between',
-//     left:15,
-//     paddingVertical:3
-
-//    },
-//    textOne:{
-//     color:'black',
-//     right:100,
-    
-//    },
 
   });
 

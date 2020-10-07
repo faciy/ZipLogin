@@ -2,33 +2,40 @@ import React from 'react'
 import { 
     View, 
     StyleSheet,
-    Text
+    Text,
+    ScrollView
 } from 'react-native';
-import Search from './Search'
+import FormOne from '../resetAdmin/FormOne'
+import FormTwo from '../resetAdmin/FormTwo'
+import ResetDelete from './ResetDelete';
 
-const Chat = () => {
+
+const ResetAdmin = () => {
 
     return (
         
             <View style={styles.container}>
                 <View style={styles.header}>
-                    <Text style={styles.text}>Chat</Text>
+                    <Text style={styles.text}>Courses</Text>
                 </View>
                 <View style={styles.footer}>
-                    
+                    <Text style={styles.resetText}>Veuillez remplir le formulaire pour changer votre mot de passe</Text>
+                   <FormOne />
+                   <FormTwo />
+                   <ResetDelete />
                 </View>
-                
             </View>
+       
         
     );
 };
 
 
-export default Chat;
+export default ResetAdmin;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1, 
+    flex: 2, 
     backgroundColor: '#090994'
   },
   header: {
@@ -43,13 +50,18 @@ const styles = StyleSheet.create({
       borderTopLeftRadius: 30,
       borderTopRightRadius: 30,
       paddingVertical: 50,
-      paddingHorizontal:5,
+      paddingHorizontal:20,
 
   },
   text:{
       color:'white',
       fontSize:20,
       fontWeight:'bold',
+  },
+  resetText:{
+      textAlign:'center',
+      fontSize:20,
   }
+  
 
 });

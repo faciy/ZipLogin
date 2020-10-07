@@ -5,13 +5,18 @@ import {StyleSheet} from 'react-native'
 // import ContacterPage from './contacterpage/ContacterPage'
 // import Navigation from './Navigation/Navigation'
 // import About from './ShoppingPage/About'
-import Profil from './ShoppingPage/Profil'
+// import Profil from './ShoppingPage/Profil'
+// import ResetAdmin from './resetAdmin/ResetAdmin'
+// import Aide from './ShoppingPage/Aide'
 // import Notification from './ShoppingPage/Notification'
 // import ShoppingPage from './ShoppingPage/ShoppingPage'
+// import Chat from './ShoppingPage/Chat'
+// import Historique from './ShoppingPage/Historique'
+import Today from './ShoppingPage/Today'
 
 const App = () => {
   return (
-    <Profil />
+    <Today />
   );
 };
 
