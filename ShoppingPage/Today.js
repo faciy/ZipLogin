@@ -66,11 +66,38 @@ const Today = () =>{
                    <AntDesign 
                     style={styles.userTop} 
                     name="minus"
-                    color="green"
+                    color="#19CD00"
                     size={208}
                     />
                 </Card>
             </View> 
+            <View style={styles.cardTwo}>
+                <Card style={styles.card}>
+                    <View style={styles.contenuOne}>
+                       <Text style={styles.ctrois}>C-003</Text>
+                       <Text style={styles.heure}>08:25</Text>
+                       <Text style={styles.heureOne}>10:25</Text>
+                   </View>
+                   <View style={styles.contenuTwo}>
+                       <Text style={styles.lieu}>Cocody angré</Text>
+                       <Text style={styles.prix}>1500 Fcfa</Text>
+                       <View style={styles.fraction}>
+                        <Text style={styles.six}>6h 10mn</Text>
+                        <View style={styles.trait}></View>
+                        <Text style={styles.km}>2Km</Text>
+                       </View> 
+                   </View>
+                   <View style={styles.contenuThree}>
+                       <Text style={styles.name}>Nom et prénoms du livreur</Text>
+                   </View>
+                   <AntDesign 
+                    style={styles.userTop} 
+                    name="minus"
+                    color="red"
+                    size={208}
+                    />
+                </Card>
+            </View>
             
             
         </View>
@@ -158,7 +185,10 @@ const styles = StyleSheet.create({
         paddingVertical:30, 
         marginHorizontal:5, 
         marginVertical:10,
-        borderBottomWidth:1,
+        borderBottomWidth:1.5,
+        borderRightWidth:1.5,
+        borderRightColor:'grey',
+        borderBottomColor:'grey'
        },
     cardOne:{
         marginTop:100,

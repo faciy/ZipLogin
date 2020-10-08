@@ -4,24 +4,52 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Avatar } from 'react-native-paper';
 import logo from '../assets/images/logo.png'
 import { IconButton, Caption, Badge, FAB, Portal, Provider } from 'react-native-paper';
+import ImagePicker from 'react-native-image-picker';
 
 const Profil = () => {
-  const [state, setState] = React.useState({ open: false });
+  const [profil, setProfil] = React.useState({ open: false });
 
-  const onStateChange = ({ open }) => setState({ open });
+  const onProfilChange = ({ open }) => setProfil({ open });
 
-  const { open } = state;
+  const { open } = profil;
+
+  const [state, setState] = React.useState({ 
+    avatarSource: null
+   });
+  
+
+  selectImage = async () =>{
+    ImagePicker.showImagePicker({noData:true,mediaType:'photo'}, (response) => {
+        console.log('Response = ', response);
+      
+        if (response.didCancel) {
+          console.log('User cancelled image picker');
+        } else if (response.error) {
+          console.log('ImagePicker Error: ', response.error);
+        } else if (response.customButton) {
+          console.log('User tapped custom button: ', response.customButton);
+        } else {
+          // You can also display the image using data:
+          // const source = { uri: 'data:image/jpeg;base64,' + response.data };
+          setState({
+            avatarSource: response.uri,
+          });
+        }
+      });
+  }
 
     return(
         <View style={styles.container}>
         <View style={styles.avatar}>
-            <Avatar.Image size={150} source={logo} style={styles.image}/>
+          {
+              state.avatarSource && <Avatar.Image size={150} source={{uri:state.avatarSource}} style={styles.image}/>
+          }   
             <IconButton
                     icon="camera"
                     color='white'
                     style={styles.camera} 
                     size={30}
-                    onPress={()=> console.log('camera')}
+                    onPress={selectImage}
             />
         </View>
         <View style={styles.name}>
@@ -75,7 +103,7 @@ const Profil = () => {
               onPress: () => console.log('Pressed star'),
             },
           ]}
-          onStateChange={onStateChange}
+          onProfilChange={onProfilChange}
           onPress={() => {
             if (open) {
               // do something if the speed dial is open
