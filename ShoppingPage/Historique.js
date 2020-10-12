@@ -9,7 +9,7 @@ const Tab = createMaterialTopTabNavigator();
 const Historique = () => {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Home" component={Today} />
+      <Tab.Screen name="Today" component={Today} />
       <Tab.Screen name="Settings" component={Week} />
     </Tab.Navigator>
   );

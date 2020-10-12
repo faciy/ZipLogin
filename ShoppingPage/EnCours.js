@@ -2,7 +2,7 @@ import React from 'react'
 import {View, Text} from 'react-native'
 import Search from '../ShoppingPage/Search'
 
-const Termine = () =>{
+const EnCours = () =>{
     return(
         <View>
             <Search />
@@ -10,4 +10,4 @@ const Termine = () =>{
     )
 }
 
-export default Termine;
+export default EnCours;

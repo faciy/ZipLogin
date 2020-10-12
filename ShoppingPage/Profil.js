@@ -18,7 +18,7 @@ const Profil = () => {
    });
   
 
-  selectImage = async () =>{
+  const selectImage = async () =>{
     ImagePicker.showImagePicker({noData:true,mediaType:'photo'}, (response) => {
         console.log('Response = ', response);
       
@@ -49,7 +49,7 @@ const Profil = () => {
                     color='white'
                     style={styles.camera} 
                     size={30}
-                    onPress={selectImage}
+                    onPress={(selectImage)}
             />
         </View>
         <View style={styles.name}>
@@ -183,8 +183,5 @@ const styles = StyleSheet.create({
         marginTop:10
     },
 
-    
-    
-   
   
   });

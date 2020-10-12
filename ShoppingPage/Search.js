@@ -44,14 +44,7 @@ export default Search;
   textInput: {
     flex:1,
     borderBottomWidth:2,
-    // borderTopWidth:2,
-    // borderRightWidth:2,
-    // borderLeftWidth:2,
     borderBottomColor:'#B1B1B1',
-    // borderTopColor:'#B1B1B1',
-    // borderRightColor:'#B1B1B1',
-    // borderLeftColor:'#B1B1B1',
-    // borderRadius:5,
     paddingHorizontal:30,  
 },
 userIcon : {

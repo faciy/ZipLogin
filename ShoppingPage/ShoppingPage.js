@@ -4,7 +4,9 @@ import {
     StyleSheet,
     Text
 } from 'react-native';
-import Search from './Search'
+import Accueil from '../ShoppingPage/Accueil'
+// import Search from './Search'
+
 
 const ShoppingPage = () => {
 
@@ -15,7 +17,8 @@ const ShoppingPage = () => {
                     <Text style={styles.text}>Courses</Text>
                 </View>
                 <View style={styles.footer}>
-                    <Search /> 
+                    <Accueil />
+                    {/* <Search />  */}
                 </View>
             </View>
         

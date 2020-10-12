@@ -1,7 +1,7 @@
 import React from 'react'
 import {View, Text, StyleSheet} from 'react-native'
 import AntDesign from 'react-native-vector-icons/AntDesign'
-import { Card, shadow} from 'react-native-paper';
+import { Card} from 'react-native-paper';
 
 const Today = () =>{
     return(
