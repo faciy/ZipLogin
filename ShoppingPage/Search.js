@@ -39,7 +39,8 @@ export default Search;
   action: {
     flexDirection: 'row',
     paddingBottom: 5,
-    marginBottom:250
+    marginBottom:250,
+    backgroundColor:'white'
   },
   textInput: {
     flex:1,

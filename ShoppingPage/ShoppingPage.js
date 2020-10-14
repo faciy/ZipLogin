@@ -5,6 +5,7 @@ import {
     Text
 } from 'react-native';
 import Accueil from '../ShoppingPage/Accueil'
+// import Bottom from '../ShoppingPage/Bottom'
 // import Search from './Search'
 
 
@@ -18,7 +19,7 @@ const ShoppingPage = () => {
                 </View>
                 <View style={styles.footer}>
                     <Accueil />
-                    {/* <Search />  */}
+                    {/* <Bottom /> */}
                 </View>
             </View>
         

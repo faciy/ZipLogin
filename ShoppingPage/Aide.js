@@ -1,5 +1,8 @@
 import React from "react";
 import { Container, Header, Content, Accordion } from "native-base";
+
+
+
 const dataArray = [
   { title: "Je veux modifier mon mot de passe", 
   content: "Rendez vous dans le menu MON PROFIL, cliquez sur le menu bleu vous verez apparaitre une liste d'action, cliquez sur MODIFIER MOT DE PASSE" 

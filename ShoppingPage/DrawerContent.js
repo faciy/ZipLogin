@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, ImageBackground } from 'react-native';
 import logo from '../assets/images/logo.png'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import nature from '../assets/images/nature.jpg'
 
 import {
     Avatar,
@@ -41,6 +42,7 @@ const DrawerContent = (props) => {
                 </View>
 
                 <Drawer.Section style={styles.drawerSection}>
+                <ImageBackground source={nature} style={styles.ImgBackground}>
                     <DrawerItem 
                         icon={({color, size}) => (
                             <Icon 
@@ -96,6 +98,7 @@ const DrawerContent = (props) => {
                     label="Se deconnecter"
                     onPress={() => {props.navigation.navigate('Login')}}
                     />
+                    </ImageBackground>
                     </Drawer.Section> 
             </View>
         </DrawerContentScrollView>
@@ -151,4 +154,8 @@ const DrawerContent = (props) => {
       paddingVertical: 12,
       paddingHorizontal: 16,
     },
+    ImgBackground:{
+      flex:1,
+      height:500,
+    }
   });

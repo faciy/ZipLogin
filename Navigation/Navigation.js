@@ -5,20 +5,24 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 
+import MyTabBar from '../ShoppingPage/MyTabBar'
+
+
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import Icon from 'react-native-vector-icons/Ionicons'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
-
+import Historique from '../ShoppingPage/Historique'
+import Notification from '../ShoppingPage/Notification'
 import Login from '../screens/Login'
 import ContacterPage from '../contacterpage/ContacterPage'
 import PasswordPage from '../passwordpage/PasswordPage'
 import ShoppingPage from '../ShoppingPage/ShoppingPage'
+
 import Profil from '../ShoppingPage/Profil'
 import About from '../ShoppingPage/About'
 import Aide from '../ShoppingPage/Aide'
 import Chat from '../ShoppingPage/Chat'
-import Notification from '../ShoppingPage/Notification'
-import Historique from '../ShoppingPage/Historique'
 import Plus from '../ShoppingPage/Plus'
 
 import DrawerContent from '../ShoppingPage/DrawerContent'
@@ -42,8 +46,17 @@ const MyDrawer = () =>{
 
 
 const MyTabs = () => {
+
   return (
-    <Tab.Navigator>
+    <Tab.Navigator tabBar={props => <MyTabBar {...props} />}>
+      <Tab.Screen 
+      name="Accueil" 
+      component={MyDrawer} 
+      options={{
+        tabBarIcon: ({ color, size }) => (
+          <MaterialCommunityIcons name="home" color={color} size={size} />
+        ),
+      }}/>
       <Tab.Screen 
       name="Chat" 
       component={Chat} 
@@ -54,19 +67,11 @@ const MyTabs = () => {
       }}
       />
       <Tab.Screen 
-      name="Historiques" 
+      name="Historique" 
       component={Historique} 
       options={{
         tabBarIcon: ({ color, size }) => (
           <FontAwesome name="credit-card" color={color} size={size} />
-        ),
-      }}/>
-      <Tab.Screen 
-      name="Accueil" 
-      component={MyDrawer} 
-      options={{
-        tabBarIcon: ({ color, size }) => (
-          <MaterialCommunityIcons name="home" color={color} size={size} />
         ),
       }}/>
       <Tab.Screen 
@@ -77,7 +82,7 @@ const MyTabs = () => {
           <MaterialIcons name="notifications" color={color} size={size} />
         ),
       }}/>
-      <Tab.Screen 
+       <Tab.Screen 
       name="Plus" 
       component={Plus} 
       options={{
@@ -85,6 +90,7 @@ const MyTabs = () => {
           <MaterialCommunityIcons name="menu" color={color} size={size} />
         ),
       }}/>
+
     </Tab.Navigator>
   );
 }
@@ -92,13 +98,14 @@ const MyTabs = () => {
 const Navigation = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
+      <Stack.Navigator screenOptions={{
+        headerShown:false
+      }}>
         <Stack.Screen 
         name="Login" 
         component={Login} 
         options={{
           title: ' ',
-          headerTransparent:true,
           
         }}/>
         <Stack.Screen 
@@ -106,18 +113,19 @@ const Navigation = () => {
         component={ContacterPage} 
         options={{
           title: 'CONTACTER NOUS ',
-          headerTintColor:'white',
+         /*  headerTintColor:'white',
           headerTitleAlign:'center',
           headerStyle:{
             backgroundColor:'#0092FF',
-          },
+          }, */
+          
         }}/>
         <Stack.Screen 
         name="PasswordPage" 
         component={PasswordPage} 
         options={{
           title: ' ',
-          headerTransparent:true,
+         /*  headerTransparent:true, */
           
         }}/>
         <Stack.Screen 
@@ -125,7 +133,7 @@ const Navigation = () => {
         component={MyTabs} 
         options={{
           title: ' ',
-          headerTransparent:true,
+         /*  headerTransparent:true, */
           
         }}/>
       </Stack.Navigator>

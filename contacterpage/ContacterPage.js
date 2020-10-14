@@ -5,6 +5,7 @@ import {
     Image,
     Text
 } from 'react-native';
+import {Header } from "native-base";
 import logo from '../assets/images/logo.png'
 import Appel from './Appel';
 import ButtonAppel from './ButtonAppel';
@@ -19,6 +20,7 @@ const ContatcterPage = () => {
     return (
        
             <View style={styles.container}>
+               {/* <Header/> */}
                 <View style={styles.logo}>
                     <Image 
                     style={styles.logoZip}

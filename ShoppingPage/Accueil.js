@@ -9,10 +9,16 @@ const Tab = createMaterialTopTabNavigator();
 
 const Historique = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator style={{bottom:35}}>
+      <Tab.Screen 
+      name="Autre" 
+      component={Autre} 
+      options={{
+        title:'En attentes'
+      }}
+      />
       <Tab.Screen name="Termine" component={Termine} />
-      <Tab.Screen name="Autre" component={Autre} />
-      <Tab.Screen name="EnCours" component={EnCours} />
+      <Tab.Screen name="En Cours" component={EnCours} />
     </Tab.Navigator>
    
   );
