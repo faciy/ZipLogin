@@ -24,19 +24,19 @@ import {
 const DrawerContent = (props) => {
 
       return(
-        <View style={{flex:1}}>
+        <View style={{flex:1}} >
         <DrawerContentScrollView {...props}>
             <View style={styles.drawerContent}>
                 <View style={styles.userInfoSection }>
-                    <View style={{marginTop:50}}>
+                    <View style={{marginTop:30}}>
                         <Avatar.Image 
                             source={logo}
-                            size={150}
+                            size={100}
                         />
                     </View>
                     <View style={{marginTop:20}}>
                         <Text style={styles.title}>KONE PANH</Text>
-                        <Caption style={styles.caption}>Livreur SALARIE</Caption>
+                        <Caption style={styles.caption}>SALARIE</Caption>
                     </View>
 
                 </View>
@@ -44,58 +44,58 @@ const DrawerContent = (props) => {
                 <Drawer.Section style={styles.drawerSection}>
                 <ImageBackground source={nature} style={styles.ImgBackground}>
                     <DrawerItem 
-                        icon={({color, size}) => (
+                        icon={({ size}) => (
                             <Icon 
                             name="account-outline" 
-                            color={color}
+                            color='white'
                             size={size}
                             />
                         )}
-                        label="Profil"
+                        label="Mon Profil"
                         onPress={() => {props.navigation.navigate('Profil')}}
                     />
                     <DrawerItem 
-                        icon={({color, size}) => (
+                        icon={({size}) => (
                             <Icon 
                             name="bookmark-outline" 
-                            color={color}
+                            color='white'
                             size={size}
                             />
                         )}
-                        label="About"
+                        label="A propos"
                         onPress={() => {props.navigation.navigate('About')}}
                     />
                     <DrawerItem 
-                        icon={({color, size}) => (
+                        icon={({size}) => (
                             <Icon 
-                            name="account-settings" 
-                            color={color}
+                            name="phone" 
+                            color='white'
                             size={size}
                             />
                         )}
-                        label="Contacter"
+                        label="Nous Contacter"
                         onPress={() => {props.navigation.navigate('ContacterPage')}}
                     />
                     <DrawerItem 
-                        icon={({color, size}) => (
+                        icon={({size}) => (
                             <Icon 
                             name="account-check-outline" 
-                            color={color}
+                            color='white'
                             size={size}
                             />
                         )}
                         label="Aide"
                         onPress={() => {props.navigation.navigate('Aide')}}
                     />
-                    <DrawerItem 
-                    icon={({color, size}) => (
+                    <DrawerItem
+                    icon={({size}) => (
                     <Icon 
                     name='exit-to-app'
-                    color={color}
+                    color='white'
                     size={size}
                     />
                     )}
-                    label="Se deconnecter"
+                    label="Se déconnecter"
                     onPress={() => {props.navigation.navigate('Login')}}
                     />
                     </ImageBackground>
@@ -124,7 +124,8 @@ const DrawerContent = (props) => {
     caption: {
       fontSize: 14,
       lineHeight: 14,
-      textAlign:'center'
+      textAlign:'center',
+      color:'#1E90FF'
     },
     row: {
       marginTop: 20,

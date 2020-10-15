@@ -41,6 +41,7 @@ const Profil = () => {
     return(
         <View style={styles.container}>
         <View style={styles.avatar}>
+        
           {
               state.avatarSource && <Avatar.Image size={150} source={{uri:state.avatarSource}} style={styles.image}/>
           }   
