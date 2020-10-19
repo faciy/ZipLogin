@@ -7,9 +7,12 @@ import EnCours from '../ShoppingPage/EnCours'
 
 const Tab = createMaterialTopTabNavigator();
 
-const Historique = () => {
+const Accueil = () => {
   return (
-    <Tab.Navigator style={{bottom:35}}>
+    <Tab.Navigator
+    style={{bottom:35}}
+
+    >
       <Tab.Screen 
       name="Autre" 
       component={Autre} 
@@ -24,4 +27,4 @@ const Historique = () => {
   );
 }
 
-export default Historique;
+export default Accueil;

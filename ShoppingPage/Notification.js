@@ -2,7 +2,8 @@ import React from 'react'
 import { 
     View, 
     StyleSheet,
-    Text
+    Text,
+    FlatList
 } from 'react-native';
 
 const Notification = () => {
@@ -46,14 +47,50 @@ const Notification = () => {
         eight:'Septembre',
         nine:'2020 09:36'
         },
+        {id:5, one:'Course affectée:',
+        two:'Départ:',
+        three:'Macory',
+        four:'Arrivée:',
+        five:'Angré 8 ème Tranche',
+        seven:'10',
+        eight:'Septembre',
+        nine:'2020 09:36'
+        },
+        {id:6, one:'Course affectée:',
+        two:'Départ:',
+        three:'Macory',
+        four:'Arrivée:',
+        five:'Angré 8 ème Tranche',
+        seven:'10',
+        eight:'Septembre',
+        nine:'2020 09:36'
+        },
+        {id:7, one:'Course affectée:',
+        two:'Départ:',
+        three:'Macory',
+        four:'Arrivée:',
+        five:'Angré 8 ème Tranche',
+        seven:'10',
+        eight:'Septembre',
+        nine:'2020 09:36'
+        },
+        {id:8, one:'Course affectée:',
+        two:'Départ:',
+        three:'Macory',
+        four:'Arrivée:',
+        five:'Angré 8 ème Tranche',
+        seven:'10',
+        eight:'Septembre',
+        nine:'2020 09:36'
+        },
 
     ]
 
-    const renderList = data.map((item) =>{
+    const renderList = ((item) =>{
         return(
             <View>
-                <View style={styles.blocOne}>
-                        <View>
+                <View style={styles.blocOne} >
+                        <View >
                             <Text>{item.one}</Text>
                             <Text><Text style={styles.gras}>{item.two}</Text> {item.three}</Text>
                             <Text><Text style={styles.gras}>{item.four}</Text> {item.five}</Text>
@@ -77,7 +114,15 @@ const Notification = () => {
                     <Text style={styles.text}>Notification</Text>
                 </View>
                 <View style={styles.footer}>
-                { renderList }
+                <FlatList  
+                data={data}
+                renderItem= {({item}) => {
+                return renderList(item)
+                }}
+                keyExtractor={item => item.id}
+
+                />
+
                 </View>
                 
             </View>
@@ -100,7 +145,7 @@ const styles = StyleSheet.create({
         marginVertical:-200
         },
         footer: {
-        flex: 1,
+        flex:1,
         backgroundColor: '#fff',
         borderTopLeftRadius: 30,
         borderTopRightRadius: 30,
