@@ -1,13 +1,13 @@
 import React from 'react'
 import {View, Text, StyleSheet} from 'react-native'
 import { IconButton, Icon } from 'react-native-paper';
-import { NativeRouter, Route, Link } from "react-router-native";
+import { DrawerActions } from '@react-navigation/native';
 
 
-const MyTabBar = (props) => {
+const MyTabBar = ({ navigation ,  navigation: { navigate  } }) => {
+
 
         return (
-        <NativeRouter>
             <View style={styles.container}>
                <View style={styles.chat}>
                     <IconButton
@@ -15,7 +15,7 @@ const MyTabBar = (props) => {
                     style={styles.userIconTwo} 
                     color="grey"
                     size={25}
-                    onPress={() => {}}
+                    onPress={() => navigate('Chat')}
                     />
                     <Text style={styles.align}>Chat</Text>
                </View>
@@ -25,7 +25,7 @@ const MyTabBar = (props) => {
                     style={styles.userIconTwo} 
                     color="grey"
                     size={25}
-                    onPress={() => {}}
+                    onPress={() => navigate('Historique')}
                     />
                     <Text style={styles.align}>Historiques</Text>
                </View>
@@ -36,7 +36,10 @@ const MyTabBar = (props) => {
                     style={styles.IconHome} 
                     color="white"
                     size={50}
-                    onPress={() => {}}
+                    onPress={() => navigation.reset({
+                        index: 0,
+                        routes: [{ name: 'ShoppingPage' }],
+                      })}
                     />
                     <Text style={{top:10, color:'#1E90FF'}}>Accueil</Text>
                </View>
@@ -47,7 +50,7 @@ const MyTabBar = (props) => {
                     style={styles.userIconTwo} 
                     color="grey"
                     size={25}
-                    onPress={() => {}}
+                    onPress={() => navigate('Notification')}
                     />
                     <Text style={styles.align}>Notification</Text>
                </View>
@@ -57,12 +60,11 @@ const MyTabBar = (props) => {
                     style={styles.userIconTwo} 
                     color="grey"
                     size={25}
-                    onPress={() => {}}
+                    onPress={() => {navigation.dispatch(DrawerActions.openDrawer());}}
                     />
                     <Text style={styles.align}>Plus</Text>
                </View>
             </View>
-        </NativeRouter>
         )
 }
  export default MyTabBar;
