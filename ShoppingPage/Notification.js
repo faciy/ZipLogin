@@ -3,8 +3,10 @@ import {
     View, 
     StyleSheet,
     Text,
-    FlatList
+    FlatList,
+    ImageBackground
 } from 'react-native';
+import Fond from '../assets/images/Fond.png'
 
 const Notification = () => {
 
@@ -109,7 +111,9 @@ const Notification = () => {
 
     return (
         
-            <View style={styles.container}>
+        <ImageBackground source={Fond} style={styles.image}>
+            <View style={styles.container}> 
+
                 <View style={styles.header}>
                     <Text style={styles.text}>Notification</Text>
                 </View>
@@ -126,6 +130,7 @@ const Notification = () => {
                 </View>
                 
             </View>
+                </ImageBackground>
         
     );
 };
@@ -136,7 +141,6 @@ export default Notification;
 const styles = StyleSheet.create({
     container: {
         flex: 1, 
-        backgroundColor: '#090994'
       },
         header: {
         flex: 1,
@@ -175,6 +179,9 @@ const styles = StyleSheet.create({
         },
         grey:{
             color:'grey'
-        }
+        },
+        image: {
+            flex: 1,
+          },
 
 });

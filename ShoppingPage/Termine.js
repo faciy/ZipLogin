@@ -1,7 +1,7 @@
 import React from 'react'
-import {View, StyleSheet, Text} from 'react-native'
+import {View, StyleSheet, Text, Image} from 'react-native'
 import {Badge} from 'react-native-paper';
-
+import panneau from '../assets/images/panneau_orange.png'
 import Search from '../ShoppingPage/Search'
 
 const Termine = () =>{
@@ -12,6 +12,7 @@ const Termine = () =>{
                 <View style={styles.bloc}>
                     <Text style={styles.lieu}>YOPOUGON, {"\n"}ANANERAIE</Text>
                     <Badge size={10} style={styles.badge} />
+                    <Image source={panneau} style={styles.panneauOne} />
                     <Text style={styles.prix}>1000 Fcfa</Text>
                 </View>
                 <View style={styles.blocnew}>
@@ -22,6 +23,7 @@ const Termine = () =>{
                 <View style={styles.blocOne}>
                     <Text style={styles.lieu}>Cocody 2 plateaux, {"\n"}8ème Tranche</Text>
                     <Badge size={10} style={styles.badge} />
+                    <Image source={panneau} style={styles.panneauTwo} />
                     <Text style={styles.prix}>1000 Fcfa</Text>
                 </View>
                 <View style={styles.blocnew}>
@@ -32,6 +34,7 @@ const Termine = () =>{
                 <View style={styles.blocTwo}>
                     <Text style={styles.lieu}>Angré 8ème Tranche</Text>
                     <Badge size={10} style={styles.badge} />
+                    <Image source={panneau} style={styles.panneauThree} />
                     <Text style={styles.prix}>1000 Fcfa</Text>
                 </View>
                 <View style={styles.blocnew}>
@@ -42,6 +45,7 @@ const Termine = () =>{
                 <View style={styles.blocThree}>
                     <Text style={styles.lieu}>Cocovico</Text>
                     <Badge size={10} style={styles.badge} />
+                    <Image source={panneau} style={styles.panneauFour} />
                     <Text style={styles.prix}>1000 Fcfa</Text>
                 </View>
                 <View style={styles.blocnew}>
@@ -132,5 +136,22 @@ const styles = StyleSheet.create({
         position:'relative',
         bottom:18
     },
+    panneauOne:{
+        position:'absolute',
+        left:-70,
+    },
+    panneauTwo:{
+        position:'absolute',
+        left:-70,
+    },
+    panneauThree:{
+        position:'absolute',
+        left:-70,
+    },
+    panneauFour:{
+        position:'absolute',
+        left:-70,
+    }
+
 
   });

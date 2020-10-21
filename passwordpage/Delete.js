@@ -17,7 +17,7 @@ const Delete = () => {
     return(
         <View style={styles.delete}>
             <TouchableOpacity style={styles.button} onPress={(btnDelete)}>
-            <Text style={styles.btnDelete}>ANNULER</Text>
+              <Text style={styles.btnDelete}>ANNULER</Text>
             </TouchableOpacity>
             <Validate />
         </View>  

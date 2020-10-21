@@ -1,18 +1,15 @@
 import React from 'react';
 import { View, StyleSheet, ImageBackground } from 'react-native';
-import logo from '../assets/images/logo.png'
+import user from '../assets/images/user.png'
+import nav from '../assets/images/nav.png'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
-import nature from '../assets/images/nature.jpg'
+
 
 import {
     Avatar,
-    Title,
     Caption,
-    Paragraph,
     Drawer,
     Text,
-    TouchableRipple,
-    Switch
 } from 'react-native-paper';
 
 import {
@@ -24,17 +21,18 @@ import {
 const DrawerContent = (props) => {
 
       return(
-        <View style={{flex:1}} >
+        <ImageBackground source={nav} style={styles.ImgBackground}>
+        <View style={styles.container}>
         <DrawerContentScrollView {...props}>
             <View style={styles.drawerContent}>
                 <View style={styles.userInfoSection }>
-                    <View style={{marginTop:30}}>
+                    <View style={{marginTop:20}}>
                         <Avatar.Image 
-                            source={logo}
-                            size={100}
+                            source={user}
+                            size={80}
                         />
                     </View>
-                    <View style={{marginTop:20}}>
+                    <View style={{marginTop:10}}>
                         <Text style={styles.title}>KONE PANH</Text>
                         <Caption style={styles.caption}>SALARIE</Caption>
                     </View>
@@ -42,7 +40,7 @@ const DrawerContent = (props) => {
                 </View>
 
                 <Drawer.Section style={styles.drawerSection}>
-                <ImageBackground source={nature} style={styles.ImgBackground}>
+          
                     <DrawerItem 
                         icon={({ size}) => (
                             <Icon 
@@ -62,7 +60,7 @@ const DrawerContent = (props) => {
                             size={size}
                             />
                         )}
-                        label="A propos"
+                        label="A Propos"
                         onPress={() => {props.navigation.navigate('About')}}
                     />
                     <DrawerItem 
@@ -88,75 +86,42 @@ const DrawerContent = (props) => {
                         onPress={() => {props.navigation.navigate('Aide')}}
                     />
                     <DrawerItem
-                    icon={({size}) => (
-                    <Icon 
-                    name='exit-to-app'
-                    color='white'
-                    size={size}
-                    />
-                    )}
                     label="Se déconnecter"
                     onPress={() => {props.navigation.navigate('Login')}}
                     />
-                    </ImageBackground>
+                  
                     </Drawer.Section> 
             </View>
         </DrawerContentScrollView>
     </View>
+    </ImageBackground>
   );
 }
 
   export default DrawerContent;
 
   const styles = StyleSheet.create({
-    drawerContent: {
-      flex: 1,
+    container:{
+      flex:1
     },
     userInfoSection: {
-      paddingLeft: 20,
-      alignItems:'center'
+      alignItems:'center', 
     },
     title: {
-      fontSize: 30,
+      fontSize: 20,
       marginTop: 3,
+      color:'grey',
       fontWeight: 'bold',
     },
     caption: {
       fontSize: 14,
-      lineHeight: 14,
       textAlign:'center',
       color:'#1E90FF'
     },
-    row: {
-      marginTop: 20,
-      flexDirection: 'row',
-      alignItems: 'center',
-    },
-    section: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      marginRight: 15,
-    },
-    paragraph: {
-      fontWeight: 'bold',
-      marginRight: 3,
-    },
     drawerSection: {
-      marginTop: 15,
-    },
-    bottomDrawerSection: {
-        marginBottom: 15,
-        borderTopColor: '#f4f4f4',
-        borderTopWidth: 1
-    },
-    preference: {
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      paddingVertical: 12,
-      paddingHorizontal: 16,
+      marginTop: 50,
     },
     ImgBackground:{
       flex:1,
-      height:500,
     }
   });

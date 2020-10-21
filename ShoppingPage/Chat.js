@@ -2,14 +2,15 @@ import React from 'react'
 import { 
     View, 
     StyleSheet,
-    Text
+    Text,
+    ImageBackground
 } from 'react-native';
-import Search from './Search'
+import Fond from '../assets/images/Fond.png'
 
 const Chat = () => {
 
     return (
-        
+        <ImageBackground source={Fond} style={styles.image}>
             <View style={styles.container}>
                 <View style={styles.header}>
                     <Text style={styles.text}>Chat</Text>
@@ -17,8 +18,8 @@ const Chat = () => {
                 <View style={styles.footer}>
                     
                 </View>
-                
             </View>
+        </ImageBackground>
         
     );
 };
@@ -29,7 +30,6 @@ export default Chat;
 const styles = StyleSheet.create({
   container: {
     flex: 1, 
-    backgroundColor: '#090994'
   },
   header: {
       flex: 1,
@@ -50,6 +50,9 @@ const styles = StyleSheet.create({
       color:'white',
       fontSize:20,
       fontWeight:'bold',
-  }
+  },
+  image: {
+    flex: 1,
+  },
 
 });

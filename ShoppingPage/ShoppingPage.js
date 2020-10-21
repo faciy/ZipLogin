@@ -2,26 +2,28 @@ import React from 'react'
 import { 
     View, 
     StyleSheet,
-    Text
+    Text,
+    ImageBackground
 } from 'react-native';
 import Accueil from '../ShoppingPage/Accueil'
-// import Bottom from '../ShoppingPage/Bottom'
-// import Search from './Search'
+import Fond from '../assets/images/Fond.png'
 
 
 const ShoppingPage = () => {
 
     return (
-        
+        <ImageBackground source={Fond} style={styles.image}>
             <View style={styles.container}>
                 <View style={styles.header}>
                     <Text style={styles.text}>Courses</Text>
                 </View>
+                
                 <View style={styles.footer}>
                     <Accueil />
                     {/* <Bottom /> */}
                 </View>
             </View>
+            </ImageBackground>
         
     );
 };
@@ -32,7 +34,6 @@ export default ShoppingPage;
 const styles = StyleSheet.create({
   container: {
     flex: 1, 
-    backgroundColor: '#090994'
   },
   header: {
       flex: 1,
@@ -53,6 +54,10 @@ const styles = StyleSheet.create({
       color:'white',
       fontSize:20,
       fontWeight:'bold',
-  }
+  },
+  image: {
+    flex: 1,
+  },
+
 
 });

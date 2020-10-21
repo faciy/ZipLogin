@@ -5,7 +5,7 @@ import {
     StyleSheet,
     Image
 } from 'react-native';
-import logo from '../assets/images/logo.png'
+import logo from '../assets/images/zip-icon-resized.png'
 
 
 const Header = () => {
@@ -15,9 +15,10 @@ const Header = () => {
                     <Text style={styles.title}>www.zip.com</Text>
                 </View>
                 <View style={styles.logo}>
-                    <Image 
+                <Image 
                     style={styles.logoZip}
                     source={logo}
+                    tintColor='white'
                     />
                     <Text style={styles.titlelogo}> zip</Text>
                 </View>

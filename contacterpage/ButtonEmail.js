@@ -16,7 +16,7 @@ const ButtonEmail = () => {
     return(
         <View>
             <TouchableOpacity style={styles.button} onPress={email}>
-            <Text style={styles.btnLogin}>ECRIRE UN MAIL</Text>
+              <Text style={styles.btnLogin}>ECRIRE UN MAIL</Text>
             </TouchableOpacity>
         </View>  
     );

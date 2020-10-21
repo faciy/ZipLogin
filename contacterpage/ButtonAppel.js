@@ -3,10 +3,12 @@ import {
     View, 
     Text, 
     StyleSheet,
-    Linking
+    Linking,
+    Image
 } from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import { IconButton } from 'react-native-paper';
+import phone from '../assets/images/phone-logo-hi1.png'
 
 const ButtonAppel = () => {
 
@@ -17,10 +19,9 @@ const ButtonAppel = () => {
     return(
         <View style={styles.buttonAppel}>
             <View style={styles.textAppel}>
-                <FontAwesome
+                <Image
                     style={styles.userIcon} 
-                    name="phone"
-                    size={30}
+                    source={phone}
                 />
                 <Text style={styles.appel}>SECRETARAIT</Text>
                 <IconButton
@@ -48,8 +49,10 @@ const styles = StyleSheet.create({
     },
    userIcon : {
     position: "absolute",
-    top:5,
-    right:170,  
+    top:8,
+    right:170,
+    height:30,
+    width:30 
     },
 
    userIconTwo: {

@@ -5,7 +5,7 @@ import {
     Text,
     Image
 } from 'react-native';
-import logo from '../assets/images/logo.png'
+import logo from '../assets/images/zip-icon-resized.png'
 
 const About = () => {
 
@@ -53,7 +53,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   logoZip:{
-      backgroundColor:'blue',
       width:100,
       height:100,   
   },

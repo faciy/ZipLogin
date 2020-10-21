@@ -6,6 +6,10 @@ import logo from '../assets/images/logo.png'
 import { IconButton, Caption, Badge, FAB, Portal, Provider } from 'react-native-paper';
 import ImagePicker from 'react-native-image-picker';
 
+import { useNavigation } from '@react-navigation/native';
+
+import { Container, Header, Left, Body, Button, Icon, Title } from 'native-base';
+
 const Profil = () => {
   const [profil, setProfil] = React.useState({ open: false });
 
@@ -38,8 +42,27 @@ const Profil = () => {
       });
   }
 
+  const navigation = useNavigation();
+
+  const Back = ()=> { navigation.goBack()}
+
     return(
         <View style={styles.container}>
+          <Container>
+                    <Header style={styles.header}>
+                      <Left>
+                        <Button transparent>
+                          <Icon 
+                          name='chevron-back-outline'
+                          onPress={(Back)}
+                          />
+                        </Button>
+                      </Left>
+                      <Body>
+                        <Title>NOUS CONTACTEZ</Title>
+                      </Body>
+                    </Header>
+          </Container>
         <View style={styles.avatar}>
         
           {

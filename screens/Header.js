@@ -5,7 +5,7 @@ import {
     StyleSheet,
     Image
 } from 'react-native';
-import logo from '../assets/images/logo.png'
+import logo from '../assets/images/zip-icon-resized.png'
 
 
 const Header = () => {
@@ -18,6 +18,7 @@ const Header = () => {
                     <Image 
                     style={styles.logoZip}
                     source={logo}
+                    tintColor='white'
                     />
                     <Text style={styles.titlelogo}> zip</Text>
                 </View>
@@ -48,6 +49,7 @@ const styles = StyleSheet.create({
   logo: {
       flexDirection:'row',
       bottom:20,
+      color:'white'
   },
   logoZip: {
     width: 100,
