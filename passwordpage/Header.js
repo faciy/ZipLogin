@@ -3,9 +3,9 @@ import {
     View, 
     Text, 
     StyleSheet,
-    Image
+    ImageBackground
 } from 'react-native';
-import logo from '../assets/images/zip-icon-resized.png'
+import zipLogos from '../assets/images/zipLogos.png'
 
 
 const Header = () => {
@@ -15,12 +15,10 @@ const Header = () => {
                     <Text style={styles.title}>www.zip.com</Text>
                 </View>
                 <View style={styles.logo}>
-                <Image 
+                    <ImageBackground 
                     style={styles.logoZip}
-                    source={logo}
-                    tintColor='white'
+                    source={zipLogos}
                     />
-                    <Text style={styles.titlelogo}> zip</Text>
                 </View>
         </View>
                
@@ -43,20 +41,21 @@ const styles = StyleSheet.create({
         color: '#B1B1B1',
         fontSize: 20,
         fontWeight: 'bold',
-        left:55,
+        textAlign:'center',
         bottom:40
     },
-  logo: {
-      flexDirection:'row',
-      bottom:20,
-  },
-  logoZip: {
-    width: 100,
-    height:100,
-},
-textheader: {
-    marginTop:180,
-}
+  
+    logoZip: {
+     width:165,
+     height:70,
+    },
+    logo:{
+        marginTop:30,
+        bottom:30
+    },
+    textheader: {
+        marginTop:180,
+    }
 
   });
 

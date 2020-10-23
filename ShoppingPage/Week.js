@@ -1,9 +1,12 @@
 import React from 'react'
-import {View, Text, StyleSheet} from 'react-native'
+import {View, Text, StyleSheet, Image} from 'react-native'
 import AntDesign from 'react-native-vector-icons/AntDesign'
-import { Card, shadow} from 'react-native-paper';
+import { Card} from 'react-native-paper';
 
-const Week = () =>{
+import red from '../assets/images/Rectangle_red.png'
+import green from '../assets/images/Rectangle_green.png'
+
+const Today = () =>{
     return(
         <View style={styles.container}>
             <View style={styles.icon}>
@@ -63,11 +66,9 @@ const Week = () =>{
                    <View style={styles.contenuThree}>
                        <Text style={styles.name}>Nom et prénoms du livreur</Text>
                    </View>
-                   <AntDesign 
+                   <Image 
                     style={styles.userTop} 
-                    name="minus"
-                    color="#19CD00"
-                    size={208}
+                    source={green}
                     />
                 </Card>
             </View> 
@@ -90,11 +91,9 @@ const Week = () =>{
                    <View style={styles.contenuThree}>
                        <Text style={styles.name}>Nom et prénoms du livreur</Text>
                    </View>
-                   <AntDesign 
-                    style={styles.userTop} 
-                    name="minus"
-                    color="red"
-                    size={208}
+                   <Image 
+                    style={styles.userTopOne} 
+                    source={red}
                     />
                 </Card>
             </View>
@@ -104,12 +103,12 @@ const Week = () =>{
     )
 }
 
-export default Week;
+export default Today;
 
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      marginTop:20,
+      marginTop:3,
     },
     icon:{
         flexDirection:'row',
@@ -182,7 +181,7 @@ const styles = StyleSheet.create({
     card:{
         backgroundColor:'#fff',
         marginTop:20,
-        paddingVertical:30, 
+        paddingVertical:21, 
         marginHorizontal:5, 
         marginVertical:10,
         borderBottomWidth:1.5,
@@ -191,7 +190,10 @@ const styles = StyleSheet.create({
         borderBottomColor:'grey'
        },
     cardOne:{
-        marginTop:100,
+        marginTop:80,
+    },
+    cardTwo:{
+        bottom:10,
     },
     contenuTwo:{
         flexDirection:'row', 
@@ -255,9 +257,15 @@ const styles = StyleSheet.create({
     },
     userTop:{
         position:'absolute',
-        transform: [{ rotate: "90deg" }],
-        top:-70,
-        left:-98,
+        transform: [{ rotate: "180deg" }],
+        top:-61,
+        left:-32,
+    },
+    userTopOne:{
+        position:'absolute',
+        transform: [{ rotate: "180deg" }],
+        top:-61,
+        left:-32,
     }
 
     

@@ -7,11 +7,33 @@ import {
 } from 'react-native';
 import logo from '../assets/images/zip-icon-resized.png'
 
+import {Header, Left, Body, Button, Icon, Title } from 'native-base';
+import { useNavigation } from '@react-navigation/native';
+
 const About = () => {
+
+  const navigation = useNavigation();
+
+  const Back = ()=> { navigation.goBack()}
+    
 
     return (
         
             <View style={styles.container}>
+                  <Header style={styles.header}>
+                      <Left>
+                        <Button transparent>
+                          <Icon 
+                          name='chevron-back-outline'
+                          onPress={(Back)}
+                          />
+                        </Button>
+                      </Left>
+                      <Body>
+                        <Title>A PROPOS DE L 'APPLI</Title>
+                      </Body>
+                    </Header>
+
                 <View style={styles.logo}>
                     <Image 
                     style={styles.logoZip}
@@ -44,24 +66,27 @@ export default About;
 const styles = StyleSheet.create({
   container: {
     flex: 1, 
-    paddingVertical: 20,
-    paddingHorizontal: 25,
   },
   logo:{
     paddingVertical: 20,
     paddingHorizontal: 25,
     alignItems: 'center',
   },
+  header:{
+    backgroundColor:'#0092FF',
+  },
   logoZip:{
       width:100,
       height:100,   
   },
   text:{
-      fontSize:18
+      fontSize:18,
+      paddingHorizontal: 25,
   },
   textOne:{
     fontSize:18,
-    marginTop:20
+    marginTop:20,
+    paddingHorizontal: 25
   },
   textGras:{
       fontWeight:'bold',

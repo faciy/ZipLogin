@@ -1,6 +1,7 @@
 import React from "react";
-import { Container, Header, Content, Accordion } from "native-base";
-
+import {StyleSheet} from 'react-native'
+import { Container, Header, Content, Accordion, Left, Body, Button, Icon, Title } from "native-base";
+import { useNavigation } from '@react-navigation/native';
 
 
 const dataArray = [
@@ -23,9 +24,26 @@ const dataArray = [
 
 
 const Aide = () => {
+
+  const navigation = useNavigation();
+
+  const Back = ()=> { navigation.goBack()}
+    
     return (
       <Container>
-        <Header />
+                    <Header style={styles.header}>
+                      <Left>
+                        <Button transparent>
+                          <Icon 
+                          name='chevron-back-outline'
+                          onPress={(Back)}
+                          />
+                        </Button>
+                      </Left>
+                      <Body>
+                        <Title style={styles.title}>AIDE</Title>
+                      </Body>
+                    </Header>
         <Content padder>
             <Accordion dataArray={dataArray} expanded={0}/>
         </Content>
@@ -33,3 +51,16 @@ const Aide = () => {
     );
   }
  export default Aide;
+
+ const styles = StyleSheet.create({
+  container: {
+    flex: 1, 
+  },
+  header:{
+    backgroundColor:'#0092FF',
+  },
+ title:{
+  left:50
+ }
+
+});

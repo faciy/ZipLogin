@@ -8,7 +8,7 @@ import {
 
 import { useNavigation } from '@react-navigation/native';
 
-import { Container, Header, Left, Body, Button, Icon, Title } from 'native-base';
+import { Header, Left, Body, Button, Icon, Title } from 'native-base';
 import logo from '../assets/images/zip-icon-resized.png'
 import Appel from './Appel';
 import ButtonAppel from './ButtonAppel';
@@ -29,7 +29,6 @@ const ContatcterPage = () => {
     return (
        
             <View style={styles.container}>
-                   <Container>
                     <Header style={styles.header}>
                       <Left>
                         <Button transparent>
@@ -63,7 +62,6 @@ const ContatcterPage = () => {
                 <ButtonMessage />
                 <Email />
                 <ButtonEmail />
-                </Container>
             </View>
     );
 };

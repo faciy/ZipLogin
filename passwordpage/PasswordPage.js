@@ -37,7 +37,6 @@ export default PasswordPage;
 const styles = StyleSheet.create({
   container: {
     flex: 1, 
-    backgroundColor: '#090994'
   },
   scrollView:{
     backgroundColor:'white',

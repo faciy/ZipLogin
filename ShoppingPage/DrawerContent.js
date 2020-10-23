@@ -5,6 +5,7 @@ import nav from '../assets/images/nav.png'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 
+
 import {
     Avatar,
     Caption,
@@ -77,7 +78,7 @@ const DrawerContent = (props) => {
                     <DrawerItem 
                         icon={({size}) => (
                             <Icon 
-                            name="account-check-outline" 
+                            name="head-question" 
                             color='white'
                             size={size}
                             />
@@ -102,7 +103,7 @@ const DrawerContent = (props) => {
 
   const styles = StyleSheet.create({
     container:{
-      flex:1
+      flex:1,
     },
     userInfoSection: {
       alignItems:'center', 
@@ -123,5 +124,5 @@ const DrawerContent = (props) => {
     },
     ImgBackground:{
       flex:1,
-    }
+        }
   });

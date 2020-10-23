@@ -1,19 +1,21 @@
 import * as React from 'react';
-import {StyleSheet, View, Text} from 'react-native'
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import {StyleSheet, View, Text, ImageBackground} from 'react-native'
 import { Avatar } from 'react-native-paper';
-import logo from '../assets/images/logo.png'
-import { IconButton, Caption, Badge, FAB, Portal, Provider } from 'react-native-paper';
+import { IconButton, Caption, Badge, FAB, Portal, Provider} from 'react-native-paper';
 import ImagePicker from 'react-native-image-picker';
 
+
 import { useNavigation } from '@react-navigation/native';
+import bg from '../assets/images/bg.png'
 
-import { Container, Header, Left, Body, Button, Icon, Title } from 'native-base';
+import { Header, Left, Body, Button, Icon, Title } from 'native-base';
 
-const Profil = () => {
+const Profil = ( {navigation: { navigate  }}) => {
+
+  // button plus
   const [profil, setProfil] = React.useState({ open: false });
 
-  const onProfilChange = ({ open }) => setProfil({ open });
+  const onStateChange = ({ open }) => setProfil({ open });
 
   const { open } = profil;
 
@@ -48,31 +50,32 @@ const Profil = () => {
 
     return(
         <View style={styles.container}>
-          <Container>
-                    <Header style={styles.header}>
+                <Header style={styles.header}>
                       <Left>
                         <Button transparent>
                           <Icon 
-                          name='chevron-back-outline'
+                          name='arrow-back'
                           onPress={(Back)}
                           />
+                          <Text>Retour</Text>
                         </Button>
                       </Left>
                       <Body>
-                        <Title>NOUS CONTACTEZ</Title>
+                        <Title>Mes informations</Title>
                       </Body>
-                    </Header>
-          </Container>
+                </Header>
+      <View style={{marginVertical:20}}>
+        
         <View style={styles.avatar}>
         
           {
-              state.avatarSource && <Avatar.Image size={150} source={{uri:state.avatarSource}} style={styles.image}/>
+              state.avatarSource && <Avatar.Image size={100} source={{uri:state.avatarSource}} style={styles.image}/>
           }   
             <IconButton
                     icon="camera"
                     color='white'
                     style={styles.camera} 
-                    size={30}
+                    size={25}
                     onPress={(selectImage)}
             />
         </View>
@@ -80,6 +83,7 @@ const Profil = () => {
             <Text style={styles.textName}>KONE PANH</Text>
             <Caption style={styles.caption}>Livreur SALARIE</Caption>
         </View>
+      </View>
         <View style={styles.row}>
             <View>
                 <Text style={styles.chiffre}>4</Text>
@@ -91,7 +95,7 @@ const Profil = () => {
             </View>
         </View>
         <View>
-            <Caption style={styles.captionInfo}>Mes informations</Caption>
+            <Caption style={styles.captionInfo}>MES INFORMATIONS</Caption>
         </View>
         <View style={styles.info}>
             <View style={styles.position}>
@@ -115,27 +119,28 @@ const Profil = () => {
                 <Text style={styles.textSize}> <Text style={styles.grastext}>Type Engin</Text>  : Moto </Text> 
             </View>
         </View>
-        <Provider>
-      <Portal>
-        <FAB.Group
-          open={open}
-          icon={ open ? 'close' : 'plus' }
-          actions={[
-            {
-              icon: 'lock',
-              label: 'Modifier mot de passe',
-              onPress: () => console.log('Pressed star'),
-            },
-          ]}
-          onProfilChange={onProfilChange}
-          onPress={() => {
-            if (open) {
-              // do something if the speed dial is open
-            }
-          }}
-        />
-      </Portal>
-    </Provider>
+          <Provider>
+            <Portal>
+              <FAB.Group
+                fabStyle={{backgroundColor:'#0092FF', marginBottom: 100}}
+                open={open}
+                icon={open ? 'lock' : 'plus'}
+                actions={[
+                  {
+                    icon: 'lock',
+                    label: 'Changer Mot de Passe',
+                    onPress: () => navigate('ResetAdmin'),
+                  },
+                ]}
+                onStateChange={onStateChange}
+                onPress={() => {
+                  if (open) {
+                    // do something if the speed dial is open
+                  }
+                }}
+              />
+            </Portal>
+          </Provider>
     </View>
     )
 }
@@ -144,18 +149,15 @@ export default Profil;
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1, 
-      paddingVertical: 20,
-      paddingHorizontal: 25,
+     flex:1
     },
     avatar:{
         alignItems:'center',
-        marginTop:40
     },
     camera:{
         backgroundColor:'#101010',
-        bottom:50,
-        left:40,
+        bottom:40,
+        left:30,
     },
     name:{
         bottom:50,
@@ -168,24 +170,29 @@ const styles = StyleSheet.create({
     caption: {
         fontSize: 14,
         lineHeight: 14,
-        top:10
+        top:10,
+        paddingHorizontal: 25,
       },
     row:{
         flexDirection:'row',
         justifyContent:'space-between',
-        marginBottom:20
+        marginBottom:20,
+        marginTop:-20
     },
     chiffre:{
-        textAlign:'center'
+        textAlign:'center',
+        fontSize:20
     },
     captionInfo:{
-        fontSize: 12,
+        fontSize: 10,
         lineHeight: 14,
         top:10,
-        marginLeft:50
+        marginLeft:70
     },
     info:{
-        marginTop:20,
+        marginTop: 5,
+        paddingHorizontal: 25,
+        paddingVertical:10
     },
     position:{
         flexDirection:'row',
@@ -206,6 +213,8 @@ const styles = StyleSheet.create({
         justifyContent:'flex-start',
         marginTop:10
     },
-
-  
+    image: {
+      
+  },
+ 
   });

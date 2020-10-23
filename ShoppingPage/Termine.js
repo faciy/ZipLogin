@@ -1,5 +1,6 @@
 import React from 'react'
 import {View, StyleSheet, Text, Image} from 'react-native'
+import { ScrollView } from 'react-native-gesture-handler';
 import {Badge} from 'react-native-paper';
 import panneau from '../assets/images/panneau_orange.png'
 import Search from '../ShoppingPage/Search'

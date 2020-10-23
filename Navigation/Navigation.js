@@ -9,7 +9,7 @@ import MyTabBar from '../ShoppingPage/MyTabBar'
 
 
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import Icon from 'react-native-vector-icons/Ionicons'
+import Ionicons from 'react-native-vector-icons/Ionicons'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import Historique from '../ShoppingPage/Historique'
@@ -48,7 +48,8 @@ const MyDrawer = () =>{
 const MyTabs = () => {
 
   return (
-    <Tab.Navigator tabBar={props => <MyTabBar {...props} />}>
+    <Tab.Navigator tabBar={props => <MyTabBar {...props} />}
+    >
       <Tab.Screen 
       name="Accueil" 
       component={MyDrawer} 
@@ -113,11 +114,6 @@ const Navigation = () => {
         component={ContacterPage} 
         options={{
           title: 'CONTACTER NOUS ',
-         /*  headerTintColor:'white',
-          headerTitleAlign:'center',
-          headerStyle:{
-            backgroundColor:'#0092FF',
-          }, */
           
         }}/>
         <Stack.Screen 
@@ -125,7 +121,6 @@ const Navigation = () => {
         component={PasswordPage} 
         options={{
           title: ' ',
-         /*  headerTransparent:true, */
           
         }}/>
         <Stack.Screen 
@@ -133,7 +128,6 @@ const Navigation = () => {
         component={MyTabs} 
         options={{
           title: ' ',
-         /*  headerTransparent:true, */
           
         }}/>
       </Stack.Navigator>

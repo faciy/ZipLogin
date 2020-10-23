@@ -8,7 +8,17 @@ import {
 } from 'react-native';
 import Fond from '../assets/images/Fond.png'
 
+
+import Icon from 'react-native-vector-icons/Ionicons';
+
+import {Left, Body, Button, Title } from 'native-base';
+import { useNavigation } from '@react-navigation/native';
+
 const Notification = () => {
+
+    const navigation = useNavigation();
+
+    const Back = ()=> { navigation.goBack()}
 
     const data = [
         {id:1, one:'Course affectée:',
@@ -115,7 +125,20 @@ const Notification = () => {
             <View style={styles.container}> 
 
                 <View style={styles.header}>
-                    <Text style={styles.text}>Notification</Text>
+                <Left style={styles.leftPosition}>
+                    <Button transparent>
+                        <Icon 
+                         name="arrow-back"
+                         color='white'
+                         size={25}
+                         onPress={(Back)}
+                        />
+                    </Button>
+                </Left>
+                <Body>
+                <Title>Notification</Title>
+                <Text style={styles.retour}>Retour</Text> 
+                </Body>
                 </View>
                 <View style={styles.footer}>
                 <FlatList  
@@ -146,7 +169,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'space-around',
         alignItems: 'center',
-        marginVertical:-200
+        marginBottom:-350
         },
         footer: {
         flex:1,
@@ -183,5 +206,17 @@ const styles = StyleSheet.create({
         image: {
             flex: 1,
           },
+          retour:{
+            position:'absolute', 
+            color:'white', 
+            top:10,
+            left:-75,
+        },
+        leftPosition:{
+            position:'absolute', 
+            left:20,
+        },
+        
+        
 
 });

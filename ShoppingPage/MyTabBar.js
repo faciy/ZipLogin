@@ -75,7 +75,7 @@ const MyTabBar = ({ navigation ,  navigation: { navigate  } }) => {
         justifyContent:'space-between',
         borderTopWidth:2,
         borderTopColor:'#B1B1B1',
-        backgroundColor:'white'
+        backgroundColor:'white', 
     },
     align:{
         textAlign:'center',
@@ -84,7 +84,7 @@ const MyTabBar = ({ navigation ,  navigation: { navigate  } }) => {
     accueil:{
             position:'relative',
             bottom: 35,
-            zIndex: 10,
+            // zIndex: 10,
     },
     button: {
         width: 60,
