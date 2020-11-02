@@ -12,13 +12,14 @@ const Accueil = () => {
   return (
     
     <Tab.Navigator 
-    style={{bottom:35}}
+    style={{top:20}}
     >
       <Tab.Screen 
       name="Autre" 
       component={Autre} 
       options={{
         title:'En attentes',
+       
       }}
       />
       <Tab.Screen name="Termine" component={Termine} />

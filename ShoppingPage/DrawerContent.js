@@ -18,13 +18,14 @@ import {
     DrawerItem,
     DrawerItemList,
   } from '@react-navigation/drawer';
+import { color } from 'react-native-reanimated';
 
 const DrawerContent = (props) => {
 
       return(
         <ImageBackground source={nav} style={styles.ImgBackground}>
         <View style={styles.container}>
-        <DrawerContentScrollView {...props}>
+        <DrawerContentScrollView  {...props}>
             <View style={styles.drawerContent}>
                 <View style={styles.userInfoSection }>
                     <View style={{marginTop:20}}>
@@ -50,7 +51,8 @@ const DrawerContent = (props) => {
                             size={size}
                             />
                         )}
-                        label="Mon Profil"
+                        
+                      label={() => <Text style={{ color: 'white' }}>Mon Profil</Text>}
                         onPress={() => {props.navigation.navigate('Profil')}}
                     />
                     <DrawerItem 
@@ -61,7 +63,8 @@ const DrawerContent = (props) => {
                             size={size}
                             />
                         )}
-                        label="A Propos"
+                       
+                      label={() => <Text style={{ color: 'white' }}>A Propos</Text>}
                         onPress={() => {props.navigation.navigate('About')}}
                     />
                     <DrawerItem 
@@ -72,7 +75,7 @@ const DrawerContent = (props) => {
                             size={size}
                             />
                         )}
-                        label="Nous Contacter"
+                      label={() => <Text style={{ color: 'white' }}>Nous Contacter</Text>}
                         onPress={() => {props.navigation.navigate('ContacterPage')}}
                     />
                     <DrawerItem 
@@ -83,11 +86,12 @@ const DrawerContent = (props) => {
                             size={size}
                             />
                         )}
-                        label="Aide"
+                        
+                      label={() => <Text style={{ color: 'white' }}>Aide</Text>}
                         onPress={() => {props.navigation.navigate('Aide')}}
                     />
                     <DrawerItem
-                    label="Se déconnecter"
+                    label={() => <Text style={{ color: 'white' }}>Se déconnecter</Text>}
                     onPress={() => {props.navigation.navigate('Login')}}
                     />
                   

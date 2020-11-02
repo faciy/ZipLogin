@@ -8,6 +8,7 @@ import {
 
 import { useNavigation } from '@react-navigation/native';
 import bg from '../assets/images/bg.png';
+import YvesBoah from '../assets/images/YvesBoah.jpg'
 import Icon from 'react-native-vector-icons/Ionicons';
 import {Left, Body, Button, Title } from 'native-base';
 
@@ -78,9 +79,11 @@ const Back = ()=> { navigation.goBack()}
         
         <View style={styles.avatar}>
         
-          {
-              state.avatarSource && <Avatar.Image size={100} source={{uri:state.avatarSource}} style={styles.image}/>
-          }   
+          {  state.avatarSource ?
+              <Avatar.Image size={100} source={{uri:state.avatarSource}} style={styles.image}/>
+          :   <Avatar.Image size={100} source={YvesBoah} style={styles.image}/> 
+          }
+          
             <IconButton
                     icon="camera"
                     color='white'

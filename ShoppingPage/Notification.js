@@ -169,14 +169,14 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'space-around',
         alignItems: 'center',
-        marginBottom:-350
+        marginBottom:-450
         },
         footer: {
         flex:1,
         backgroundColor: '#fff',
         borderTopLeftRadius: 30,
         borderTopRightRadius: 30,
-        paddingVertical: 50,
+        // paddingVertical: 50,
         paddingHorizontal:20,
             
         },

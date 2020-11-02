@@ -12,6 +12,7 @@ const Search = () => {
     const [text, setText] = React.useState('');
 
     return(
+    
         <View style={styles.search}>
            
             <View style={styles.action}>

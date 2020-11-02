@@ -34,7 +34,7 @@ const Tab = createBottomTabNavigator();
 
 const MyDrawer = () =>{
   return (
-    <Drawer.Navigator drawerContent={props => <DrawerContent {...props} />}>
+    <Drawer.Navigator  drawerContent={props => <DrawerContent {...props} />}>
       <Drawer.Screen name="ShoppingPage" component={ShoppingPage}/>
       <Drawer.Screen name="Profil" component={Profil} />
       <Drawer.Screen name="ResetAdmin" component={ResetAdmin} />
