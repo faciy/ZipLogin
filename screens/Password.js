@@ -7,19 +7,19 @@ import {
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons'
 
-const Password = () => {
+const Password = (props) => {
       
     const [pass, setPass] = React.useState({
         password: '',
         secureTextEntry: true
     })
     
-    const handleChangePassword = (val) => {
-        setPass({
-            ...pass,
-            password: val
-        })
-    }
+    // const handleChangePassword = (val) => {
+    //     setPass({
+    //         ...pass,
+    //         password: val
+    //     })
+    // }
 
     const updateSecureTextEntry = () => {
         setPass({
@@ -41,7 +41,7 @@ const Password = () => {
                     style={styles.textInput}
                     autoCapitalize="none"
                     secureTextEntry= {pass.secureTextEntry ? true : false}
-                    onChangeText={(val) => handleChangePassword(val)}
+                    onChangeText={props.onChangeText}
                 />
                     
                 <TouchableOpacity

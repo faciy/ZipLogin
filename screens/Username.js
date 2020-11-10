@@ -6,10 +6,10 @@ import {
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons'
 
-const Username = () => {
-    
-    const [text, setText] = React.useState('');
 
+
+const Username = (props) => {
+ 
     return(
             <View style={styles.action}>
                  <Ionicons
@@ -21,8 +21,7 @@ const Username = () => {
                 <TextInput 
                     placeholder="Nom d'utilisateur"
                     style={styles.textInput}
-                    onChangeText={ () => setText(text)}
-
+                    onChangeText={props.onChangeText}
                 />
             </View>   
     );

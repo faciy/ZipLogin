@@ -28,8 +28,6 @@ const ContatcterPage = () => {
   const Back = ()=> { navigation.goBack()}
     
     return (
-       <ScrollView>
-
             <View style={styles.container}>
                     <Header style={styles.header}>
                       <Left>
@@ -65,7 +63,7 @@ const ContatcterPage = () => {
                 <Email />
                 <ButtonEmail />
             </View>
-       </ScrollView>
+      
     );
 };
 

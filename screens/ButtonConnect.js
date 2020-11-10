@@ -7,15 +7,12 @@ import {
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-const ButtonConnect = () => {
+const ButtonConnect = (props) => {
 
-  const navigation = useNavigation();
-
-    const btnconnect = ()=> { navigation.navigate("ShoppingPage")}
     
     return(
         <View>
-            <TouchableOpacity style={styles.button} onPress={(btnconnect)}>
+            <TouchableOpacity style={styles.button} onPress={props.onPress}>
             <Text style={styles.btnLogin}>Se connecter  </Text>
             </TouchableOpacity>
         </View>  
