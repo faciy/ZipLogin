@@ -7,11 +7,11 @@ import {
 } from 'react-native';
 
 
-const ResetValidate = () => {
+const ResetValidate = (props) => {
     
     return(
         <View style={styles.Validate}>
-            <TouchableOpacity style={styles.button} onPress={() => {}}>
+            <TouchableOpacity style={styles.button} onPress={(props.onPress)}>
             <Text style={styles.btnValide}>VALIDER</Text>
             </TouchableOpacity>
         </View>  

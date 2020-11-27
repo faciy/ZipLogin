@@ -12,7 +12,7 @@ const Accueil = () => {
   return (
     
     <Tab.Navigator 
-    style={{top:20}}
+    style={{top:30}}
     >
       <Tab.Screen 
       name="Autre" 
@@ -23,7 +23,15 @@ const Accueil = () => {
       }}
       />
       <Tab.Screen name="Termine" component={Termine} />
-      <Tab.Screen name="En Cours" component={EnCours}  />
+      <Tab.Screen 
+      name="En Cours" 
+      component={EnCours}  
+      options={{
+        title:'En Cours',
+        
+       
+      }}
+      />
     </Tab.Navigator>
    
   );

@@ -1,60 +1,94 @@
 import React from 'react'
-import {View, StyleSheet, Text, Image} from 'react-native'
-import { ScrollView } from 'react-native-gesture-handler';
+import {View, StyleSheet, Text, Image, FlatList, ScrollView} from 'react-native'
 import {Badge} from 'react-native-paper';
 import panneau from '../assets/images/panneau_orange.png'
 import Search from '../ShoppingPage/Search'
 
 const Termine = () =>{
-    return(
-        <View style={styles.container}>
-            <Search />
+
+    const data = [
+        {id:1, 
+        lieu:'YOPOUGON, \nANANERAIE',
+        prix:'1000 Fcfa',
+        autreLieu:'CHU D\'Angré',
+        min:'0 min'
+        },
+        {id:2, 
+            lieu:'Cocody 2 plateaux,\n8ème Tranche',
+            prix:'1000 Fcfa',
+            autreLieu:'Cocovico',
+            min:'0 min'
+        },
+        {id:3, 
+            lieu:'YOPOUGON, \nANANERAIE',
+            prix:'1000 Fcfa',
+            autreLieu:'CHU D\'Angré',
+            min:'0 min'
+        },
+        {id:4, 
+            lieu:'Cocody 2 plateaux,\n8ème Tranche',
+            prix:'1000 Fcfa',
+            autreLieu:'Cocovico',
+            min:'0 min'
+        },
+        {id:5, 
+            lieu:'YOPOUGON, \nANANERAIE',
+            prix:'1000 Fcfa',
+            autreLieu:'CHU D\'Angré',
+            min:'0 min'
+        },
+        {id:6, 
+            lieu:'Cocody 2 plateaux,\n8ème Tranche',
+            prix:'1000 Fcfa',
+            autreLieu:'Cocovico',
+            min:'0 min'
+        },
+        {id:7, 
+            lieu:'YOPOUGON, \nANANERAIE',
+            prix:'1000 Fcfa',
+            autreLieu:'CHU D\'Angré',
+            min:'0 min'
+        },
+        {id:8, 
+            lieu:'YOPOUGON, \nANANERAIE',
+            prix:'1000 Fcfa',
+            autreLieu:'CHU D\'Angré',
+            min:'0 min'
+        },
+    ];
+
+    const renderList = ((item) =>{
+        return(
             <View style={styles.termine}>
                 <View style={styles.bloc}>
-                    <Text style={styles.lieu}>YOPOUGON, {"\n"}ANANERAIE</Text>
+                     <Text style={styles.lieu}>{item.lieu}</Text>
                     <Badge size={10} style={styles.badge} />
                     <Image source={panneau} style={styles.panneauOne} />
-                    <Text style={styles.prix}>1000 Fcfa</Text>
+                    <Text style={styles.prix}>{item.prix}</Text>
                 </View>
                 <View style={styles.blocnew}>
-                    <Text style={styles.autreLieu}>CHU D'Angré</Text>
-                    <Text style={styles.minOne}>0 min</Text>
-                </View> 
-{/* blocOne */}
-                <View style={styles.blocOne}>
-                    <Text style={styles.lieu}>Cocody 2 plateaux, {"\n"}8ème Tranche</Text>
-                    <Badge size={10} style={styles.badge} />
-                    <Image source={panneau} style={styles.panneauTwo} />
-                    <Text style={styles.prix}>1000 Fcfa</Text>
-                </View>
-                <View style={styles.blocnew}>
-                    <Text style={styles.autreLieu}>Cocovico</Text>
-                    <Text style={styles.minOne}>0 min</Text>
-                </View> 
-{/* blocTwo */}
-                <View style={styles.blocTwo}>
-                    <Text style={styles.lieu}>Angré 8ème Tranche</Text>
-                    <Badge size={10} style={styles.badge} />
-                    <Image source={panneau} style={styles.panneauThree} />
-                    <Text style={styles.prix}>1000 Fcfa</Text>
-                </View>
-                <View style={styles.blocnew}>
-                    <Text style={styles.autreLieu}>Macory</Text>
-                    <Text style={styles.min}>0 min</Text>
-                </View> 
-{/* blocThree */}
-                <View style={styles.blocThree}>
-                    <Text style={styles.lieu}>Cocovico</Text>
-                    <Badge size={10} style={styles.badge} />
-                    <Image source={panneau} style={styles.panneauFour} />
-                    <Text style={styles.prix}>1000 Fcfa</Text>
-                </View>
-                <View style={styles.blocnew}>
-                    <Text style={styles.autreLieu}>Macory Residentiel</Text>
-                    <Text style={styles.min}>0 min</Text>
-                </View>    
+                    <Text style={styles.autreLieu}>{item.autreLieu}</Text>
+                    <Text style={styles.minOne}>{item.min}</Text>
+                 </View>
             </View>
+        )
+    });
+
+
+
+    return(
+   
+        <View style={styles.container}>
+            <Search />
+                <FlatList 
+                data={data}
+                renderItem={({item}) => {
+                    return renderList(item)
+                }}
+                keyExtractor={item => `${item.id}`}
+                />
         </View>
+    
     )
 }
 
@@ -62,39 +96,11 @@ export default Termine;
 
 const styles = StyleSheet.create({
     container:{
-        flex:1,
+        // flex:1,
     },
     bloc:{
         marginLeft:80,
         marginRight:30,
-        bottom:250,
-        flexDirection:'row',
-        justifyContent:'space-between'
-    },
-    termine:{
-        marginTop:10
-    },
-    blocOne:{
-        marginLeft:80,
-        marginRight:30,
-        bottom:250,
-        marginTop:20,
-        flexDirection:'row',
-        justifyContent:'space-between'
-    },
-    blocTwo:{
-        marginLeft:80,
-        marginRight:30,
-        bottom:250,
-        marginTop:20,
-        flexDirection:'row',
-        justifyContent:'space-between'
-    },
-    blocThree:{
-        marginLeft:80,
-        marginRight:30,
-        bottom:250,
-        marginTop:40,
         flexDirection:'row',
         justifyContent:'space-between'
     },
@@ -102,9 +108,11 @@ const styles = StyleSheet.create({
         marginLeft:80,
         marginRight:30,
         marginTop:5,
-        bottom:250,
         flexDirection:'row',
         justifyContent:'space-between'
+    },
+    termine:{
+        marginBottom:10,
     },
     badge:{
         position:'absolute',
@@ -115,6 +123,7 @@ const styles = StyleSheet.create({
     lieu:{
         fontWeight:'bold',
         fontSize:15,
+        // bottom:50,
     },
     prix:{
         fontWeight:'bold',
@@ -130,29 +139,8 @@ const styles = StyleSheet.create({
         color:'grey',
        
     },
-    minOne:{
-        fontSize:15,
-        fontWeight:'bold',
-        color:'grey',
-        position:'relative',
-        bottom:18
-    },
     panneauOne:{
         position:'absolute',
         left:-70,
     },
-    panneauTwo:{
-        position:'absolute',
-        left:-70,
-    },
-    panneauThree:{
-        position:'absolute',
-        left:-70,
-    },
-    panneauFour:{
-        position:'absolute',
-        left:-70,
-    }
-
-
   });

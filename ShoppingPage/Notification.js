@@ -14,89 +14,93 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import {Left, Body, Button, Title } from 'native-base';
 import { useNavigation } from '@react-navigation/native';
 
+
 const Notification = () => {
+
 
     const navigation = useNavigation();
 
     const Back = ()=> { navigation.goBack()}
 
-    const data = [
-        {id:1, one:'Course affectée:',
-        two:'Départ:',
-        three:'CHU d\'Angré',
-        four:'Arrivée:',
-        five:'YOPOUGON',
-        six:'ANANERAIRE',
-        seven:'10',
-        eight:'Septembre',
-        nine:'2020 09:36'
-        },
-        {id:2, one:'Course affectée:',
-        two:'Départ:',
-        three:'Cocovico',
-        four:'Arrivée:',
-        five:'Cocody 2 plateaux',
-        six:'8 ème Tranche',
-        seven:'10',
-        eight:'Septembre',
-        nine:'2020 09:36'
-        },
-        {id:3, one:'Course affectée:',
-        two:'Départ:',
-        three:'Macory Residentiel',
-        four:'Arrivée:',
-        five:'Cocovico',
-        seven:'10',
-        eight:'Septembre',
-        nine:'2020 09:36'
-        },
-        {id:4, one:'Course affectée:',
-        two:'Départ:',
-        three:'Macory',
-        four:'Arrivée:',
-        five:'Angré 8 ème Tranche',
-        seven:'10',
-        eight:'Septembre',
-        nine:'2020 09:36'
-        },
-        {id:5, one:'Course affectée:',
-        two:'Départ:',
-        three:'Macory',
-        four:'Arrivée:',
-        five:'Angré 8 ème Tranche',
-        seven:'10',
-        eight:'Septembre',
-        nine:'2020 09:36'
-        },
-        {id:6, one:'Course affectée:',
-        two:'Départ:',
-        three:'Macory',
-        four:'Arrivée:',
-        five:'Angré 8 ème Tranche',
-        seven:'10',
-        eight:'Septembre',
-        nine:'2020 09:36'
-        },
-        {id:7, one:'Course affectée:',
-        two:'Départ:',
-        three:'Macory',
-        four:'Arrivée:',
-        five:'Angré 8 ème Tranche',
-        seven:'10',
-        eight:'Septembre',
-        nine:'2020 09:36'
-        },
-        {id:8, one:'Course affectée:',
-        two:'Départ:',
-        three:'Macory',
-        four:'Arrivée:',
-        five:'Angré 8 ème Tranche',
-        seven:'10',
-        eight:'Septembre',
-        nine:'2020 09:36'
-        },
 
-    ]
+const data = [
+    {id:1, one:'Course affectée:',
+    two:'Départ:',
+    three:'CHU d\'Angré',
+    four:'Arrivée:',
+    five:'YOPOUGON',
+    six:'ANANERAIRE',
+    seven:'10',
+    eight:'Septembre',
+    nine:'2020 09:36'
+    },
+    {id:2, one:'Course affectée:',
+    two:'Départ:',
+    three:'Cocovico',
+    four:'Arrivée:',
+    five:'Cocody 2 plateaux',
+    six:'8 ème Tranche',
+    seven:'10',
+    eight:'Septembre',
+    nine:'2020 09:36'
+    },
+    {id:3, one:'Course affectée:',
+    two:'Départ:',
+    three:'Macory Residentiel',
+    four:'Arrivée:',
+    five:'Cocovico',
+    seven:'10',
+    eight:'Septembre',
+    nine:'2020 09:36'
+    },
+    {id:4, one:'Course affectée:',
+    two:'Départ:',
+    three:'Macory',
+    four:'Arrivée:',
+    five:'Angré 8 ème Tranche',
+    seven:'10',
+    eight:'Septembre',
+    nine:'2020 09:36'
+    },
+    {id:5, one:'Course affectée:',
+    two:'Départ:',
+    three:'Macory',
+    four:'Arrivée:',
+    five:'Angré 8 ème Tranche',
+    seven:'10',
+    eight:'Septembre',
+    nine:'2020 09:36'
+    },
+    {id:6, one:'Course affectée:',
+    two:'Départ:',
+    three:'Macory',
+    four:'Arrivée:',
+    five:'Angré 8 ème Tranche',
+    seven:'10',
+    eight:'Septembre',
+    nine:'2020 09:36'
+    },
+    {id:7, one:'Course affectée:',
+    two:'Départ:',
+    three:'Macory',
+    four:'Arrivée:',
+    five:'Angré 8 ème Tranche',
+    seven:'10',
+    eight:'Septembre',
+    nine:'2020 09:36'
+    },
+    {id:8, one:'Course affectée:',
+    two:'Départ:',
+    three:'Macory',
+    four:'Arrivée:',
+    five:'Angré 8 ème Tranche',
+    seven:'10',
+    eight:'Septembre',
+    nine:'2020 09:36'
+    },
+
+]
+
 
     const renderList = ((item) =>{
         return(
@@ -117,7 +121,7 @@ const Notification = () => {
                        <View style={styles.border}></View>
             </View>
         )
-    })
+    });
 
     return (
         
@@ -146,7 +150,7 @@ const Notification = () => {
                 renderItem= {({item}) => {
                 return renderList(item)
                 }}
-                keyExtractor={item => item.id}
+                keyExtractor={item => `${item.id}`}
 
                 />
 

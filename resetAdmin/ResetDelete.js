@@ -13,6 +13,9 @@ const ResetDelete = () => {
   const navigation = useNavigation();
 
   const Annuler = ()=> { navigation.goBack()}
+  const valider = () =>{
+    console.log('press')
+  }
 
     return(
         
@@ -20,7 +23,7 @@ const ResetDelete = () => {
             <TouchableOpacity style={styles.button} onPress={(Annuler)}>
             <Text style={styles.btnDelete}>ANNULER</Text>
             </TouchableOpacity>
-            <ResetValidate />
+            <ResetValidate onPress={() => valider()} />
         </View>  
     );
 };

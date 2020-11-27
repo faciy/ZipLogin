@@ -4,7 +4,8 @@ import {
     View, 
     StyleSheet,
     ScrollView,
-    ImageBackground
+    ImageBackground,
+    Text
 } from 'react-native';
 import Header from './Header'
 import Username from './Username'
@@ -33,10 +34,17 @@ const Login = () => {
           password : password
       }
     }
+
     axios
     .post('http://api-staging.app-zip.com/api/auths/signin', user)
-    .then(res => console.warn(res))
-    .catch(err => console.log(err))
+    // .then(response => response.json())
+    .then(response => navigation.navigate('ShoppingPage'))
+    .catch((err) =>{
+      alert("Remplissez bien les champs")
+      // console.log(error.response.data);
+      // // console.log(error.response.status);
+    });
+    
   };
 
     

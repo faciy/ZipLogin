@@ -40,14 +40,13 @@ export default Search;
   action: {
     flexDirection: 'row',
     paddingBottom: 5,
-    marginBottom:250,
     backgroundColor:'white'
   },
   textInput: {
     flex:1,
     borderBottomWidth:2,
     borderBottomColor:'#B1B1B1',
-    paddingHorizontal:30,  
+    paddingHorizontal:30,
 },
 userIcon : {
     position: "absolute",

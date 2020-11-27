@@ -4,6 +4,7 @@ import {
     StyleSheet,
     Text,
     ImageBackground,
+    ScrollView
 } from 'react-native';
 import FormOne from '../resetAdmin/FormOne';
 import FormTwo from '../resetAdmin/FormTwo';
@@ -27,6 +28,7 @@ const ResetAdmin = () => {
 
 
     return (
+        <ScrollView style={styles.scrollView}>
         <ImageBackground source={bg} style={styles.image}>
             <View style={styles.container}>
                 <View style={styles.header}>
@@ -53,6 +55,7 @@ const ResetAdmin = () => {
                     </View>
             </View>
             </ImageBackground>
+        </ScrollView>
        
         
     );
@@ -65,11 +68,14 @@ const styles = StyleSheet.create({
     container: {
         flex: 1, 
     },
+    scrollView:{
+        backgroundColor:'white',
+      },
     header: {
         flex: 1,
         justifyContent: 'space-around',
         alignItems: 'center',
-        marginBottom:-350,
+        marginBottom:60,
     },
     footer: {
         flex: 1,
