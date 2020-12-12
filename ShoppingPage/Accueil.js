@@ -22,7 +22,7 @@ const Accueil = () => {
        
       }}
       />
-      <Tab.Screen name="Termine" component={Termine} />
+      <Tab.Screen name="Terminees" component={Termine} />
       <Tab.Screen 
       name="En Cours" 
       component={EnCours}  

@@ -15,6 +15,7 @@ import Navigation from './Navigation/Navigation'
 // import Today from './ShoppingPage/Today'
 // import Week from './ShoppingPage/Week';
 // import Termine from './ShoppingPage/Termine'
+// import CourseFinish from './courses/CourseFinish'
 
 const App = () => {
   return (

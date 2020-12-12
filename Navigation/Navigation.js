@@ -25,6 +25,8 @@ import Aide from '../ShoppingPage/Aide'
 import Chat from '../ShoppingPage/Chat'
 import Plus from '../ShoppingPage/Plus'
 import ResetAdmin from '../resetAdmin/ResetAdmin'
+import CourseFinish from '../courses/CourseFinish'
+import CourseEnCours from '../courses/CourseEnCours'
 
 import DrawerContent from '../ShoppingPage/DrawerContent'
 
@@ -38,6 +40,8 @@ const MyDrawer = () =>{
       <Drawer.Screen name="ShoppingPage" component={ShoppingPage}/>
       <Drawer.Screen name="Profil" component={Profil} />
       <Drawer.Screen name="ResetAdmin" component={ResetAdmin} />
+      <Drawer.Screen name="CourseEnCours" component={CourseEnCours} />
+      <Drawer.Screen name="CourseFinish" component={CourseFinish} />
       <Drawer.Screen name="About" component={About} />
       <Drawer.Screen name="ContacterPage" component={ContacterPage} />
       <Drawer.Screen name="Aide" component={Aide} />

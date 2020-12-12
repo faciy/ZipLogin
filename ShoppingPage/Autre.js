@@ -1,102 +1,66 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import {View, StyleSheet, Text, Image, FlatList, ScrollView} from 'react-native'
-import {Badge} from 'react-native-paper';
 import panneau from '../assets/images/panneau_orange.png'
 import Search from '../ShoppingPage/Search'
+import {getURI} from '../api/Base'
 
 const Autre = () =>{
 
-    const data = [
-        {id:1, 
-        lieu:'YOPOUGON, \nANANERAIE',
-        prix:'1000 Fcfa',
-        autreLieu:'CHU D\'Angré',
-        min:'0 min'
-        },
-        {id:2, 
-            lieu:'Cocody 2 plateaux,\n8ème Tranche',
-            prix:'1000 Fcfa',
-            autreLieu:'Cocovico',
-            min:'0 min'
-        },
-        {id:3, 
-            lieu:'YOPOUGON, \nANANERAIE',
-            prix:'1000 Fcfa',
-            autreLieu:'CHU D\'Angré',
-            min:'0 min'
-        },
-        {id:4, 
-            lieu:'Cocody 2 plateaux,\n8ème Tranche',
-            prix:'1000 Fcfa',
-            autreLieu:'Cocovico',
-            min:'0 min'
-        },
-        {id:5, 
-            lieu:'YOPOUGON, \nANANERAIE',
-            prix:'1000 Fcfa',
-            autreLieu:'CHU D\'Angré',
-            min:'0 min'
-        },
-        {id:6, 
-            lieu:'Cocody 2 plateaux,\n8ème Tranche',
-            prix:'1000 Fcfa',
-            autreLieu:'Cocovico',
-            min:'0 min'
-        },
-        {id:7, 
-            lieu:'YOPOUGON, \nANANERAIE',
-            prix:'1000 Fcfa',
-            autreLieu:'CHU D\'Angré',
-            min:'0 min'
-        },
-        {id:8, 
-            lieu:'YOPOUGON, \nANANERAIE',
-            prix:'1000 Fcfa',
-            autreLieu:'CHU D\'Angré',
-            min:'0 min'
-        },
-    ];
-
-    const renderList = ((item) =>{
-        return(
-            <View style={styles.termine}>
-                <View style={styles.bloc}>
-                     <Text style={styles.lieu}>{item.lieu}</Text>
-                    {/* <Badge size={10} style={styles.badge} /> */}
-                    <Image source={panneau} style={styles.panneauOne} />
-                    <Text style={styles.prix}>{item.prix}</Text>
-                </View>
-                <View style={styles.blocnew}>
-                    <Text style={styles.autreLieu}>{item.autreLieu}</Text>
-                    <Text style={styles.minOne}>{item.min}</Text>
-                 </View>
-            </View>
-        )
-    });
+const [accepter, setAccepter] = useState([])
 
 
+    useEffect( () => {
+        const apiUrl = `${getURI()}/livreurs/1/courses-accepter/mobiles`
+        const headers = {
+            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImtvdWFzc2ljaGFybGVzb3RobmllbEBnbWFpbC5jb20iLCJpYXQiOjE2MDc2NzYyNzAsImV4cCI6MTYwNzc2MjY3MH0.axv-c3lTYHj_imOpM3IwiYu_tcq9467QTreGNj9auss',
+        }
+        fetch(apiUrl, {headers})
+        .then((res) => res.json())
+        .then((response) => {
+        console.log(response.data)
+        // setAccepter(response.data)
+        })
+        .catch(err => {
+        console.log('erreur statut : 401')
+        })
+}, [])
 
-    return(
-   
-        <View style={styles.container}>
-            <Search />
-                <FlatList 
-                data={data}
-                renderItem={({item}) => {
-                    return renderList(item)
-                }}
-                keyExtractor={item => `${item.id}`}
-                />
+const renderItem = ({item}) => {
+    console.log(item.course)
+return(
+    <View style={styles.termine}>
+        <View style={styles.bloc}>
+            <Text style={styles.lieu}>{item.course.lieuLivraison} </Text>
+            <Image source={panneau} style={styles.panneauOne} />
+            <Text style={styles.prix}>{item.course.tarif} Fcfa</Text>
         </View>
-    
-    )
+        <View style={styles.blocnew}>
+            <Text style={styles.autreLieu}>{item.course.lieuRecuperation}</Text>
+            <Text style={styles.minOne}>{item.course.heureFin}</Text>
+        </View>
+    </View>
+)
+}
+
+
+return(
+<View style={styles.container}>
+    <Search />
+    <FlatList
+    data={accepter}
+    renderItem={renderItem}
+    keyExtractor={(item, index) => index.toString()}
+    />
+</View>
+)
 }
 
 export default Autre;
 
 const styles = StyleSheet.create({
     container:{
-        // flex:1,
+        backgroundColor:'white',
+        flex:1,
     },
     bloc:{
         marginLeft:80,
@@ -123,7 +87,7 @@ const styles = StyleSheet.create({
     lieu:{
         fontWeight:'bold',
         fontSize:15,
-        // bottom:50,
+    // bottom:50,
     },
     prix:{
         fontWeight:'bold',
@@ -137,10 +101,9 @@ const styles = StyleSheet.create({
         fontSize:15,
         fontWeight:'bold',
         color:'grey',
-       
     },
     panneauOne:{
         position:'absolute',
         left:-70,
     },
-  });
+});

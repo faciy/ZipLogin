@@ -3,8 +3,9 @@ import {
     View, 
     StyleSheet,
     TextInput,
-    Text
+    SafeAreaView
 } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
 import Ionicons from 'react-native-vector-icons/Ionicons'
 
 const Search = () => {
@@ -12,9 +13,7 @@ const Search = () => {
     const [text, setText] = React.useState('');
 
     return(
-    
         <View style={styles.search}>
-           
             <View style={styles.action}>
                  <Ionicons
                     style={styles.userIcon} 
@@ -26,10 +25,11 @@ const Search = () => {
                     placeholder="Rechercher"
                     style={styles.textInput}
                     onChangeText={ () => setText(text)}
-
                 />
             </View> 
         </View>
+
+   
               
     );
 };
@@ -47,17 +47,17 @@ export default Search;
     borderBottomWidth:2,
     borderBottomColor:'#B1B1B1',
     paddingHorizontal:30,
+    marginEnd:15,
+    marginStart:15,
 },
 userIcon : {
     position: "absolute",
     top:16,
+    left:16,
 },
 text:{
     textAlign:'center',
-    // marginBottom:20,
 },
-// search:{
-//     bottom:40
-// }
+
 
 });
