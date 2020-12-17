@@ -4,7 +4,7 @@ import panneau from '../assets/images/panneau_orange.png'
 import Search from '../ShoppingPage/Search'
 import {getURI} from '../api/Base'
 import { useNavigation } from '@react-navigation/native';
-import {headers} from '../api/Base'
+
 
 const EnCours = () =>{
 
@@ -16,7 +16,7 @@ const navigation = useNavigation();
     useEffect( () => {
         const apiUrl = `${getURI()}/livreurs/1/liste-courses-affecter/mobiles`
         const headers = {
-            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImtvdWFzc2ljaGFybGVzb3RobmllbEBnbWFpbC5jb20iLCJpYXQiOjE2MDc2NzYyNzAsImV4cCI6MTYwNzc2MjY3MH0.axv-c3lTYHj_imOpM3IwiYu_tcq9467QTreGNj9auss',
+            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImtvdWFzc2ljaGFybGVzb3RobmllbEBnbWFpbC5jb20iLCJpYXQiOjE2MDgxOTg1MTIsImV4cCI6MTYwODI4NDkxMn0.OB-UlnQYWy8ccGFGasnNbp7smCsK_M_loD96PohgDdI',
         }
         fetch(apiUrl, {headers})
         .then((res) => res.json())

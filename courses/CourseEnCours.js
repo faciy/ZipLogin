@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, StyleSheet, Text, ImageBackground, Image, TouchableOpacity } from 'react-native';
 import { Header, Left, Body, Button, Icon, Title } from 'native-base';
 import bg from '../assets/images/bg.png';
 import panneau from '../assets/images/panneau_orange.png'
 import { useNavigation } from '@react-navigation/native';
+import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
+
 
 const CourseEnCours = () => {
+
+   
 
     const navigation = useNavigation();
 
@@ -33,7 +37,18 @@ const CourseEnCours = () => {
             </ImageBackground>
         </View>
         <View style={styles.body}> 
-        
+            <View style={styles.containerMap}>
+                <MapView
+                style={styles.map}
+                // region={{
+                //     latitude: 37.78825,
+                //     longitude: -122.4324,
+                //     latitudeDelta: 0.015,
+                //     longitudeDelta: 0.0121,
+                // }}
+                >
+                </MapView>
+            </View>
         </View>
         <View style={styles.footer}> 
             <View style={styles.distance}>
@@ -67,7 +82,7 @@ const styles = StyleSheet.create({
     },
     body:{
         flex:2.5, 
-        backgroundColor: 'skyblue',
+        // backgroundColor: 'skyblue',
         justifyContent: 'space-around',
         alignItems: 'center',
         marginBottom:-20
@@ -165,9 +180,19 @@ const styles = StyleSheet.create({
         fontSize:15, 
         fontWeight:'bold',
       },
-
+      containerMap: {
+        ...StyleSheet.absoluteFillObject,
+        height: 300,
+        width: 400,
+        justifyContent: 'flex-end',
+        alignItems: 'center',
+      },
+      map: {
+        ...StyleSheet.absoluteFillObject,
+      },
 
 
 });
+
 
 export default CourseEnCours;
